@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imprenta Arcoiris | Impresión, personalización y gran formato</title>
+    <meta name="description"
+        content="Imprenta Arcoiris en Apizaco, Tlaxcala. Playeras, gorras, sudaderas, sublimación, DTF, transfer, impresión digital, gran formato, sellos, tarjetas, banners, credenciales, promocionales, corte láser CNC, tesis, serigrafía e invitaciones." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-soft: #f1d98b;
+            --gold-deep: #9e7413;
+            --bg: #0a0a0a;
+            --bg-2: #121212;
+            --card: #171717;
+            --text: #f5f5f5;
+            --muted: #cfcfcf;
+            --line: rgba(212, 175, 55, .28);
+            --shadow: 0 20px 50px rgba(0, 0, 0, .45);
+            --radius: 22px;
+            --max: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background:
+                radial-gradient(circle at top, rgba(212, 175, 55, .12), transparent 26%),
+                linear-gradient(180deg, #050505 0%, #0e0e0e 45%, #090909 100%);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit
+        }
+
+        ul {
+            list-style: none
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - 2rem));
+            margin: auto
+        }
+
+        .section {
+            padding: 90px 0
+        }
+
+        .gold-text {
+            background: linear-gradient(135deg, #fff3c2 0%, var(--gold-soft) 20%, var(--gold) 48%, #fff6d0 62%, var(--gold-deep) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            border: 1px solid var(--line);
+            color: var(--gold-soft);
+            border-radius: 999px;
+            padding: .55rem 1rem;
+            font-size: .9rem;
+            background: rgba(212, 175, 55, .08);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.4rem);
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-text {
+            color: var(--muted);
+            font-size: 1.02rem;
+            max-width: 780px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            backdrop-filter: blur(16px);
+            background: rgba(8, 8, 8, .72);
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: .85rem;
+            min-width: 0;
+        }
+
+        .brand img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 20px rgba(212, 175, 55, .18));
+            border-radius: 14px;
+        }
+
+        .brand-text h1 {
+            font-size: 1rem;
+            letter-spacing: .24em;
+            font-weight: 600;
+            color: var(--gold-soft);
+        }
+
+        .brand-text p {
+            font-size: .9rem;
+            color: #ddd;
+            margin-top: -2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            color: #ececec;
+            font-size: .95rem;
+        }
+
+        .nav-links a {
+            transition: .25s ease;
+            opacity: .92;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-soft)
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .6rem;
+            border-radius: 999px;
+            padding: .95rem 1.4rem;
+            font-weight: 600;
+            transition: .25s ease;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #f7e7a6 0%, var(--gold) 45%, #9b7316 100%);
+            color: #111;
+            box-shadow: 0 18px 35px rgba(212, 175, 55, .22);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 22px 40px rgba(212, 175, 55, .28)
+        }
+
+        .btn-outline {
+            border-color: rgba(212, 175, 55, .35);
+            color: var(--gold-soft);
+            background: rgba(212, 175, 55, .06);
+        }
+
+        .btn-outline:hover {
+            background: rgba(212, 175, 55, .12);
+            transform: translateY(-2px)
+        }
+
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background:
+                linear-gradient(90deg, rgba(0, 0, 0, .88) 0%, rgba(0, 0, 0, .68) 45%, rgba(0, 0, 0, .45) 100%),
+                url('https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 15%, rgba(212, 175, 55, .18), transparent 20%),
+                radial-gradient(circle at 78% 18%, rgba(212, 175, 55, .12), transparent 18%),
+                linear-gradient(180deg, transparent, rgba(0, 0, 0, .25));
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 2rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            padding: 70px 0;
+        }
+
+        .hero-copy h2 {
+            font-size: clamp(2.6rem, 6vw, 5.5rem);
+            line-height: .98;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-copy p {
+            font-size: 1.08rem;
+            color: #e8e8e8;
+            max-width: 720px;
+            margin-bottom: 1.6rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-points {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            max-width: 780px;
+        }
+
+        .point {
+            padding: 1rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .08);
+            box-shadow: var(--shadow);
+        }
+
+        .point strong {
+            display: block;
+            color: var(--gold-soft);
+            font-size: 1.05rem;
+            margin-bottom: .2rem;
+        }
+
+        .point span {
+            color: #d9d9d9;
+            font-size: .92rem
+        }
+
+        .hero-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .03));
+            border: 1px solid rgba(212, 175, 55, .2);
+            border-radius: 28px;
+            padding: 1.3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-card .frame {
+            border-radius: 22px;
+            overflow: hidden;
+            position: relative;
+            min-height: 520px;
+            background:
+                linear-gradient(180deg, rgba(0, 0, 0, .12), rgba(0, 0, 0, .5)),
+                url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .hero-card .overlay-box {
+            width: 100%;
+            background: rgba(10, 10, 10, .72);
+            border: 1px solid rgba(212, 175, 55, .24);
+            border-radius: 20px;
+            padding: 1.2rem;
+        }
+
+        .hero-card .overlay-box h3 {
+            font-size: 1.25rem;
+            margin-bottom: .6rem;
+            color: var(--gold-soft);
+        }
+
+        .hero-card .overlay-box p {
+            color: #e4e4e4;
+            font-size: .96rem
+        }
+
+        .stats {
+            margin-top: -55px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .stat {
+            background: linear-gradient(180deg, rgba(21, 21, 21, .98), rgba(16, 16, 16, .98));
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stat h3 {
+            font-size: 2rem;
+            color: var(--gold-soft);
+            margin-bottom: .3rem
+        }
+
+        .stat p {
+            color: #d4d4d4;
+            font-size: .95rem
+        }
+
+        .about-grid,
+        .contact-grid,
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .image-card,
+        .content-card,
+        .contact-card,
+        .materials-card,
+        .gallery-card,
+        .faq-item,
+        .service-card,
+        .category-card,
+        .process-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+            border: 1px solid rgba(212, 175, 55, .16);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .image-card {
+            overflow: hidden
+        }
+
+        .image-card img {
+            height: 100%;
+            min-height: 480px;
+            object-fit: cover
+        }
+
+        .content-card {
+            padding: 2rem
+        }
+
+        .check-list {
+            display: grid;
+            gap: .9rem;
+            margin-top: 1.2rem
+        }
+
+        .check-list li {
+            display: flex;
+            gap: .8rem;
+            color: #e7e7e7;
+            align-items: flex-start;
+        }
+
+        .check-list li::before {
+            content: '✦';
+            color: var(--gold-soft);
+            margin-top: 1px;
+            flex: 0 0 auto;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .category-card {
+            padding: 1.4rem
+        }
+
+        .category-card h3 {
+            color: var(--gold-soft);
+            margin-bottom: .65rem;
+            font-size: 1.1rem
+        }
+
+        .category-card p {
+            color: #d7d7d7;
+            font-size: .95rem
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.15rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            overflow: hidden
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover
+        }
+
+        .service-content {
+            padding: 1.35rem
+        }
+
+        .service-content h3 {
+            color: var(--gold-soft);
+            margin-bottom: .55rem;
+            font-size: 1.15rem
+        }
+
+        .service-content p {
+            color: #dcdcdc;
+            font-size: .95rem
+        }
+
+        .materials-wrap {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 1.4rem;
+            margin-top: 2rem;
+        }
+
+        .materials-card,
+        .gallery-card,
+        .contact-card {
+            padding: 1.6rem
+        }
+
+        .materials-card h3,
+        .gallery-card h3,
+        .contact-card h3 {
+            color: var(--gold-soft);
+            margin-bottom: 1rem;
+            font-size: 1.2rem
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .8rem;
+        }
+
+        .badge {
+            border: 1px solid rgba(212, 175, 55, .25);
+            background: rgba(212, 175, 55, .08);
+            color: #f4e3a7;
+            padding: .65rem 1rem;
+            border-radius: 999px;
+            font-size: .92rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery-grid img {
+            height: 220px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .process-card {
+            padding: 1.4rem
+        }
+
+        .process-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #f9ebaf, var(--gold));
+            color: #111;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .process-card h3 {
+            color: var(--gold-soft);
+            margin-bottom: .5rem;
+            font-size: 1.06rem
+        }
+
+        .process-card p {
+            color: #dbdbdb;
+            font-size: .95rem
+        }
+
+        .faq {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            padding: 1.3rem
+        }
+
+        .faq-item h3 {
+            color: var(--gold-soft);
+            font-size: 1.05rem;
+            margin-bottom: .45rem
+        }
+
+        .faq-item p {
+            color: #ddd
+        }
+
+        .contact-card .info-list {
+            display: grid;
+            gap: 1rem
+        }
+
+        .info-box {
+            border: 1px solid rgba(255, 255, 255, .08);
+            background: rgba(255, 255, 255, .03);
+            border-radius: 18px;
+            padding: 1rem;
+        }
+
+        .info-box strong {
+            display: block;
+            color: var(--gold-soft);
+            margin-bottom: .3rem
+        }
+
+        .info-box span,
+        .info-box a {
+            color: #e8e8e8;
+            word-break: break-word
+        }
+
+        .map-wrap {
+            overflow: hidden;
+            border-radius: 24px;
+            border: 1px solid rgba(212, 175, 55, .18);
+            min-height: 520px;
+            box-shadow: var(--shadow);
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 520px;
+            border: 0;
+            filter: grayscale(1) invert(.92) contrast(.92)
+        }
+
+        .cta-box {
+            background:
+                linear-gradient(120deg, rgba(212, 175, 55, .12), rgba(255, 255, 255, .04)),
+                linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+            border: 1px solid rgba(212, 175, 55, .22);
+            border-radius: 30px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .cta-box h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.1;
+            margin-bottom: 1rem
+        }
+
+        .cta-box p {
+            color: #e2e2e2;
+            max-width: 820px;
+            margin-bottom: 1.25rem
+        }
+
+        footer {
+            padding: 2rem 0 3rem;
+            border-top: 1px solid rgba(255, 255, 255, .07);
+            background: #090909;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .footer-copy p {
+            color: #cfcfcf;
+            margin-top: .7rem
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: flex-end;
+            color: #dcdcdc;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 999;
+            width: 64px;
+            height: 64px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            font-size: 1.6rem;
+            background: linear-gradient(135deg, #f8ebae, var(--gold));
+            color: #111;
+            box-shadow: 0 18px 35px rgba(212, 175, 55, .28);
+            border: 1px solid rgba(0, 0, 0, .15);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all .65s ease
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none
+        }
+
+        @media (max-width: 1100px) {
+
+            .hero-grid,
+            .about-grid,
+            .contact-grid,
+            .materials-wrap,
+            .footer-grid,
+            .cta-grid,
+            .stats-grid,
+            .services-grid,
+            .process-grid,
+            .category-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-points {
+                grid-template-columns: 1fr
+            }
+        }
+
+        @media (max-width: 820px) {
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center
+            }
+
+            .nav-links,
+            .nav-actions {
+                justify-content: center
+            }
+
+            .hero {
+                min-height: auto
+            }
+
+            .hero-grid,
+            .about-grid,
+            .contact-grid,
+            .materials-wrap,
+            .footer-grid,
+            .stats-grid,
+            .services-grid,
+            .process-grid,
+            .category-grid,
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card .frame,
+            .image-card img,
+            .map-wrap iframe,
+            .map-wrap {
+                min-height: 360px
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr
+            }
+
+            .section {
+                padding: 72px 0
+            }
+
+            .stats {
+                margin-top: 0;
+                padding-top: 20px
+            }
+
+            .footer-links {
+                justify-content: flex-start
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav">
+            <a href="#inicio" class="brand">
+                <img src="https://i.ibb.co/Cpw8krCw/icon-a.png" alt="Logo Imprenta Arcoiris">
+                <div class="brand-text">
+                    <h1>IMPRENTA</h1>
+                    <p>ARCOIRIS</p>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#materiales">Materiales</a>
+                <a href="#proceso">Proceso</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a class="btn btn-outline" href="mailto:arcoirisimpresiones6@gmail.com">Correo</a>
+                <a class="btn btn-primary" href="https://wa.me/522411250287" target="_blank" rel="noopener">Cotiza por
+                    WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <span class="section-tag">Diseño, impresión y personalización con estilo premium</span>
+                    <h2>Haz que tu marca <span class="gold-text">brille</span> con impresiones que sí impactan.</h2>
+                    <p>
+                        En <strong>Imprenta Arcoiris</strong> convertimos ideas en productos visuales de alta presencia.
+                        Trabajamos desde prendas personalizadas y promocionales, hasta impresión digital, gran formato,
+                        serigrafía, tesis, invitaciones, reconocimientos, corte láser CNC y mucho más. Damos atención a
+                        negocios, escuelas, eventos y clientes particulares.
+                    </p>
+                    <div class="hero-buttons">
+                        <a class="btn btn-primary"
+                            href="https://wa.me/522411250287?text=Hola%20quiero%20cotizar%20con%20Imprenta%20Arcoiris"
+                            target="_blank" rel="noopener">Solicitar cotización</a>
+                        <a class="btn btn-outline" href="#servicios">Ver servicios</a>
+                    </div>
+
+                    <div class="hero-points">
+                        <div class="point">
+                            <strong>Personalización total</strong>
+                            <span>Prendas, papelería, promocionales y proyectos especiales.</span>
+                        </div>
+                        <div class="point">
+                            <strong>Acabados de impacto</strong>
+                            <span>Materiales, tamaños y técnicas para cada necesidad.</span>
+                        </div>
+                        <div class="point">
+                            <strong>Atención local</strong>
+                            <span>Estamos en Apizaco, Tlaxcala, listos para ayudarte.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-card reveal">
+                    <div class="frame">
+                        <div class="overlay-box">
+                            <h3>Tu imprenta para negocios, eventos y proyectos escolares</h3>
+                            <p>
+                                Desde una sola pieza hasta producciones mayores. Te ayudamos con impresión profesional,
+                                identidad visual y artículos personalizados para impulsar tu marca o tu evento.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container stats-grid reveal">
+                <div class="stat">
+                    <h3>20+</h3>
+                    <p>Líneas de servicio y personalización</p>
+                </div>
+                <div class="stat">
+                    <h3>100%</h3>
+                    <p>Atención personalizada en cada pedido</p>
+                </div>
+                <div class="stat">
+                    <h3>Local</h3>
+                    <p>Servicio en Apizaco, Tlaxcala</p>
+                </div>
+                <div class="stat">
+                    <h3>Premium</h3>
+                    <p>Estética elegante y acabados llamativos</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="nosotros">
+            <div class="container about-grid">
+                <div class="image-card reveal">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+                        alt="Trabajo de impresión y diseño profesional">
+                </div>
+                <div class="content-card reveal">
+                    <span class="section-tag">Sobre nosotros</span>
+                    <h2 class="section-title">Impresión, creatividad y soluciones visuales en un solo lugar.</h2>
+                    <p class="section-text">
+                        En <strong>Imprenta Arcoiris</strong> ofrecemos una propuesta integral para quienes buscan
+                        calidad visual, variedad de productos y atención cercana. Nos especializamos en impresión y
+                        personalización para negocios, emprendedores, estudiantes, instituciones y eventos sociales.
+                    </p>
+                    <ul class="check-list">
+                        <li>Diseño atractivo y presentación profesional para marcas, negocios y eventos.</li>
+                        <li>Amplio catálogo: textiles, papelería, promocionales, gran formato y acabados especiales.
+                        </li>
+                        <li>Soluciones para menudeo y mayoreo con enfoque en calidad, imagen y funcionalidad.</li>
+                        <li>Asesoría para elegir el material, tamaño, técnica de impresión o tipo de personalización
+                            ideal.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="category-grid reveal">
+                    <article class="category-card">
+                        <h3>Prendas personalizadas</h3>
+                        <p>Playeras, gorras, sudaderas, estampados textiles, DTF, sublimación, transfer y vinil textil
+                            para proyectos promocionales o uso personal.</p>
+                    </article>
+                    <article class="category-card">
+                        <h3>Papelería y oficina</h3>
+                        <p>Tarjetas de presentación, credenciales, sellos, trípticos, invitaciones, reconocimientos y
+                            papelería impresa con acabados limpios.</p>
+                    </article>
+                    <article class="category-card">
+                        <h3>Publicidad visual</h3>
+                        <p>Banners, lona, vinil, microperforado, impresión en gran formato y HD para negocios, campañas,
+                            eventos o señalización.</p>
+                    </article>
+                    <article class="category-card">
+                        <h3>Proyectos especiales</h3>
+                        <p>Corte láser CNC en MDF y papel, empastados para tesis, recuerdos, vasos y promocionales para
+                            todo tipo de ocasión.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="servicios">
+            <div class="container">
+                <span class="section-tag reveal">Servicios principales</span>
+                <h2 class="section-title reveal">Todo lo que vendes y todo lo que tu cliente recuerda.</h2>
+                <p class="section-text reveal">
+                    Reunimos una amplia variedad de soluciones para ayudarte a promocionar tu negocio, vestir tu marca,
+                    presentar tus productos y destacar en eventos, campañas y proyectos escolares o empresariales.
+                </p>
+
+                <div class="services-grid">
+                    <article class="service-card reveal">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80"
+                            alt="Playeras y estampados personalizados">
+                        <div class="service-content">
+                            <h3>Playeras, gorras y sudaderas</h3>
+                            <p>Personalización de prendas para marcas, uniformes, eventos, regalos, equipos, campañas y
+                                ventas por catálogo con estilos llamativos y profesionales.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"
+                            alt="Sublimación y transfer en productos">
+                        <div class="service-content">
+                            <h3>Sublimación, DTF y transfer</h3>
+                            <p>Técnicas ideales para colores vibrantes, detalles definidos y personalización sobre
+                                distintos tipos de prendas y artículos promocionales.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <img src="https://images.unsplash.com/photo-1586769852044-692d6e3703f0?auto=format&fit=crop&w=1200&q=80"
+                            alt="Impresión digital en papeles especiales">
+                        <div class="service-content">
+                            <h3>Impresión digital</h3>
+                            <p>Tabloide, carta y extratabloide en diversos sustratos como opalina, bond, kromekote y
+                                otros papeles para presentaciones, material corporativo y publicidad.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80"
+                            alt="Tarjetas y papelería de presentación">
+                        <div class="service-content">
+                            <h3>Tarjetas, sellos y credenciales</h3>
+                            <p>Soluciones para identificación, papelería comercial y presentación profesional de
+                                negocios, escuelas, instituciones y emprendedores.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80"
+                            alt="Banners y gran formato para negocios">
+                        <div class="service-content">
+                            <h3>Banners y gran formato</h3>
+                            <p>Impresión en lona, vinil, microperforado y materiales publicitarios de alta presencia
+                                para fachadas, promociones, exhibiciones y señalización.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80"
+                            alt="Empastados y tesis universitarias">
+                        <div class="service-content">
+                            <h3>Empastados, tesis y reconocimientos</h3>
+                            <p>Empastados para tesis de distintos tamaños y colores, así como reconocimientos y
+                                presentaciones formales con excelente acabado visual.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80"
+                            alt="Invitaciones y recuerdos para eventos">
+                        <div class="service-content">
+                            <h3>Invitaciones, vasos y recuerdos</h3>
+                            <p>Artículos personalizados para bodas, cumpleaños, bautizos, graduaciones y todo tipo de
+                                evento con estilo único y atención al detalle.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1200&q=80"
+                            alt="Corte láser cnc y serigrafía">
+                        <div class="service-content">
+                            <h3>Corte láser CNC y serigrafía</h3>
+                            <p>Corte en MDF y papel, serigrafía en general, corte vinil de rotulación y textil para
+                                proyectos decorativos, promocionales o de producción.</p>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1200&q=80"
+                            alt="Promocionales para empresas y negocios">
+                        <div class="service-content">
+                            <h3>Promocionales y estampados en general</h3>
+                            <p>Artículos para impulsar tu marca, mejorar tu imagen comercial o crear recuerdos
+                                memorables para clientes, eventos y campañas promocionales.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="materiales">
+            <div class="container">
+                <span class="section-tag reveal">Materiales y acabados</span>
+                <h2 class="section-title reveal">Opciones pensadas para imagen, durabilidad y presentación.</h2>
+                <p class="section-text reveal">
+                    Elegimos el tipo de impresión y material según el objetivo de tu producto: promocionar, informar,
+                    decorar, presentar o vender. Trabajamos con papeles y superficies que permiten resultados visuales
+                    fuertes y funcionales.
+                </p>
+
+                <div class="materials-wrap">
+                    <div class="materials-card reveal">
+                        <h3>Papeles y sustratos disponibles</h3>
+                        <div class="badge-list">
+                            <span class="badge">Opalina</span>
+                            <span class="badge">Bond</span>
+                            <span class="badge">Kromekote</span>
+                            <span class="badge">Lona</span>
+                            <span class="badge">Vinil</span>
+                            <span class="badge">Vinil microperforado</span>
+                            <span class="badge">MDF</span>
+                            <span class="badge">Papel para corte láser</span>
+                            <span class="badge">Textiles para estampado</span>
+                            <span class="badge">Materiales promocionales</span>
+                        </div>
+                    </div>
+
+                    <div class="materials-card reveal">
+                        <h3>Lo que te ayudamos a decidir</h3>
+                        <ul class="check-list">
+                            <li>Qué material conviene más según el uso del producto.</li>
+                            <li>Qué técnica de impresión o estampado dará mejor resultado.</li>
+                            <li>Qué tamaño, formato o presentación será más efectiva.</li>
+                            <li>Qué acabado proyecta una imagen más profesional y atractiva.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="gallery-card reveal" style="margin-top:1.4rem;">
+                    <h3>Inspiración visual para tu próximo pedido</h3>
+                    <div class="gallery-grid">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80"
+                            alt="Papelería profesional y diseño impreso">
+                        <img src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?auto=format&fit=crop&w=1200&q=80"
+                            alt="Promocionales y material de marca">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+                            alt="Espacios con publicidad visual e impresión">
+                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80"
+                            alt="Prendas personalizadas y moda promocional">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="proceso">
+            <div class="container">
+                <span class="section-tag reveal">Cómo trabajamos</span>
+                <h2 class="section-title reveal">Un proceso simple para cotizar, producir y entregar con claridad.</h2>
+                <p class="section-text reveal">
+                    Ya sea una playera, una lona, unas credenciales, un empastado o una producción promocional completa,
+                    nuestro objetivo es que tengas una atención rápida, una propuesta clara y un resultado visual que te
+                    deje satisfecho.
+                </p>
+
+                <div class="process-grid">
+                    <article class="process-card reveal">
+                        <div class="process-number">1</div>
+                        <h3>Cuéntanos tu idea</h3>
+                        <p>Escríbenos por WhatsApp o visítanos. Indícanos qué producto necesitas, cantidades, medida,
+                            material y fecha aproximada.</p>
+                    </article>
+                    <article class="process-card reveal">
+                        <div class="process-number">2</div>
+                        <h3>Te orientamos</h3>
+                        <p>Te ayudamos a elegir la mejor opción de impresión, estampado, formato o acabado según tu
+                            objetivo y presupuesto.</p>
+                    </article>
+                    <article class="process-card reveal">
+                        <div class="process-number">3</div>
+                        <h3>Producimos</h3>
+                        <p>Trabajamos tu pedido con enfoque en presentación, legibilidad, color, presencia visual y
+                            funcionalidad del material.</p>
+                    </article>
+                    <article class="process-card reveal">
+                        <div class="process-number">4</div>
+                        <h3>Entregamos</h3>
+                        <p>Recoge tu trabajo en nuestra ubicación o coordina directamente con nosotros la atención a tu
+                            pedido.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <span class="section-tag reveal">Preguntas frecuentes</span>
+                <h2 class="section-title reveal">Información útil antes de pedir tu cotización.</h2>
+                <div class="faq">
+                    <div class="faq-item reveal">
+                        <h3>¿Qué tipo de clientes atienden?</h3>
+                        <p>Atendemos negocios, emprendedores, escuelas, oficinas, eventos sociales, clientes
+                            particulares y proyectos escolares o corporativos.</p>
+                    </div>
+                    <div class="faq-item reveal">
+                        <h3>¿Pueden trabajar desde una sola pieza o también mayoreo?</h3>
+                        <p>Sí. Podemos ayudarte con pedidos individuales y también con producciones más grandes,
+                            dependiendo del producto y la técnica requerida.</p>
+                    </div>
+                    <div class="faq-item reveal">
+                        <h3>¿Qué necesito para cotizar más rápido?</h3>
+                        <p>Es ideal compartir cantidad, medidas, tipo de material, idea de diseño, técnica deseada y
+                            fecha estimada de entrega.</p>
+                    </div>
+                    <div class="faq-item reveal">
+                        <h3>¿Solo hacen impresión en papel?</h3>
+                        <p>No. También trabajamos textiles, promocionales, lona, vinil, MDF, papel para corte láser,
+                            recuerdos y productos personalizados para diferentes usos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contacto">
+            <div class="container contact-grid">
+                <div class="contact-card reveal">
+                    <span class="section-tag">Contacto y ubicación</span>
+                    <h2 class="section-title">Estamos listos para cotizar tu próximo proyecto.</h2>
+                    <p class="section-text" style="margin-bottom:1.4rem;">
+                        Escríbenos para pedir precios, resolver dudas o iniciar tu pedido. Si buscas una imprenta
+                        elegante, versátil y con mucha variedad de servicios en Apizaco, estás en el lugar correcto.
+                    </p>
+
+                    <div class="info-list">
+                        <div class="info-box">
+                            <strong>Dirección</strong>
+                            <span>Av. Moctezuma No. 507, Col. Centro, Apizaco, Tlaxcala.</span>
+                        </div>
+                        <div class="info-box">
+                            <strong>Teléfono / WhatsApp</strong>
+                            <a href="https://wa.me/522411250287" target="_blank" rel="noopener">241 125 0287</a>
+                        </div>
+                        <div class="info-box">
+                            <strong>Correo electrónico</strong>
+                            <a href="mailto:arcoirisimpresiones6@gmail.com">arcoirisimpresiones6@gmail.com</a>
+                        </div>
+                        <div class="info-box">
+                            <strong>Servicios destacados</strong>
+                            <span>Prendas personalizadas, impresión digital, gran formato, sellos, tarjetas, tesis,
+                                serigrafía, promocionales, corte láser CNC, invitaciones y más.</span>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.5rem;">
+                        <a class="btn btn-primary"
+                            href="https://wa.me/522411250287?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios"
+                            target="_blank" rel="noopener">Enviar WhatsApp</a>
+                        <a class="btn btn-outline" href="mailto:arcoirisimpresiones6@gmail.com">Escribir correo</a>
+                    </div>
+                </div>
+
+                <div class="map-wrap reveal">
+                    <iframe title="Ubicación Imprenta Arcoiris"
+                        src="https://www.google.com/maps?q=Av.%20Moctezuma%20507%20Centro%20Apizaco%20Tlaxcala&output=embed"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="cta-box reveal">
+                    <div class="cta-grid">
+                        <div>
+                            <span class="section-tag">Imprenta Arcoiris</span>
+                            <h2>Tu imagen merece más que una impresión común.</h2>
+                            <p>
+                                Haz que tus productos, eventos, ideas y marca destaquen con una presentación poderosa.
+                                Cotiza hoy tus playeras, gorras, impresiones, lonas, tarjetas, promocionales, tesis,
+                                invitaciones y más.
+                            </p>
+                        </div>
+                        <div style="display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+                            <a class="btn btn-primary"
+                                href="https://wa.me/522411250287?text=Hola%20quiero%20cotizar%20con%20Imprenta%20Arcoiris"
+                                target="_blank" rel="noopener">Cotizar ahora</a>
+                            <a class="btn btn-outline" href="#inicio">Volver arriba</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-copy">
+                <a href="#inicio" class="brand" style="display:inline-flex;">
+                    <img src="arc_logo_gold.png" alt="Logo Imprenta Arcoiris">
+                    <div class="brand-text">
+                        <h1>IMPRENTA</h1>
+                        <p>ARCOIRIS</p>
+                    </div>
+                </a>
+                <p>Impresión, personalización, gran formato, promocionales, textiles y mucho más en Apizaco, Tlaxcala.
+                </p>
+            </div>
+            <div class="footer-links">
+                <a href="#nosotros">Nosotros</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#materiales">Materiales</a>
+                <a href="#proceso">Proceso</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/522411250287?text=Hola%20quiero%20cotizar%20con%20Imprenta%20Arcoiris"
+        target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
