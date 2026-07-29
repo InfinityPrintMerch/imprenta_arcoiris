@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eduardo López Salinas">
+    <title>Imprenta Arcoiris | Nuestra Galería</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Vinculamos los archivos CSS centralizados -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="secciones.css">
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <section class="page-wrapper">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2 class="section-title">Portafolio de <span>Proyectos</span></h2>
+                <p class="section-subtitle">Explora algunos de nuestros trabajos más recientes. Calidad visual que habla
+                    por sí misma en cada detalle.</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="gallery-filters fade-in-up" style="transition-delay: 0.1s;">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="gran-formato">Gran Formato</button>
+                <button class="filter-btn" data-filter="papeleria">Papelería</button>
+                <button class="filter-btn" data-filter="promocionales">Promocionales</button>
+                <button class="filter-btn" data-filter="corte">Corte / CNC</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in-up" data-category="papeleria">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3"
+                        alt="Proyecto 1">
+                    <div class="gallery-overlay">
+                        <h4>Papelería Corporativa</h4>
+                        <p>Tarjetas Premium Laminadas</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in-up" data-category="gran-formato">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3"
+                        alt="Proyecto 2">
+                    <div class="gallery-overlay">
+                        <h4>Gran Formato</h4>
+                        <p>Rotulación Vehicular en Vinil</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in-up" data-category="promocionales">
+                    <img src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3"
+                        alt="Proyecto 3">
+                    <div class="gallery-overlay">
+                        <h4>Promocionales</h4>
+                        <p>Termos Personalizados Láser</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in-up" data-category="corte">
+                    <img src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?ixlib=rb-4.0.3"
+                        alt="Proyecto 4">
+                    <div class="gallery-overlay">
+                        <h4>Corte y Suaje</h4>
+                        <p>Stickers Holográficos</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in-up" data-category="corte">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3"
+                        alt="Proyecto 5">
+                    <div class="gallery-overlay">
+                        <h4>CNC Láser</h4>
+                        <p>Invitaciones en MDF</p>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in-up" data-category="gran-formato">
+                    <img src="https://images.unsplash.com/photo-1587588354456-ae376af71a25?ixlib=rb-4.0.3"
+                        alt="Proyecto 6">
+                    <div class="gallery-overlay">
+                        <h4>Gran Formato</h4>
+                        <p>Lona Publicitaria Front</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner Inferior -->
+            <div class="cta-banner fade-in-up">
+                <h2>¿Tienes una idea en mente?</h2>
+                <p>Déjanos convertir tu visión en realidad con nuestra calidad de impresión.</p>
+                <a href="contacto.html" class="btn btn-outline"
+                    style="border: 1px solid var(--border-color); color: var(--blue-dark); background: var(--white); border-radius: 10px; position: relative; z-index: 1;">Cotizar
+                    mi proyecto <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="components.js"></script>
+
+    <!-- Script de Filtros exclusivo para esta página -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remover activo de todos
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Agregar activo al seleccionado
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.classList.remove('hide');
+                            setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => { item.classList.add('hide'); }, 400);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
