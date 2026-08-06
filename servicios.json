@@ -1,0 +1,276 @@
+[
+    {
+        "id": "imp-digital",
+        "titulo": "Impresión Digital",
+        "descripcion": "Volantes, folletos, tarjetas, catálogos y papelería express de alta resolución en sustratos variados (opalina, couché, texturizados) y formatos hasta extra tabloide.",
+        "url": "404.html",
+        "icono": "fa-book-open",
+        "colorClase": "bg-blue",
+        "keywords": [
+            "volantes",
+            "folletos",
+            "flyers",
+            "tripticos",
+            "dipticos",
+            "catalogos",
+            "impresion a color",
+            "blanco y negro",
+            "copias",
+            "express",
+            "hojas",
+            "opalina",
+            "couche",
+            "kromekote",
+            "sulfatada",
+            "carta",
+            "tabloide",
+            "extra tabloide",
+            "sublimacion",
+            "tiro y retiro"
+        ]
+    },
+    {
+        "id": "papeleria",
+        "titulo": "Papelería Corporativa",
+        "descripcion": "Tarjetas de presentación, notas de remisión y materiales premium para dar la mejor cara a tu negocio.",
+        "url": "404.html",
+        "icono": "fa-layer-group",
+        "colorClase": "bg-gold",
+        "keywords": [
+            "tarjetas de presentacion",
+            "hojas membretadas",
+            "folders",
+            "sobres",
+            "credenciales",
+            "gafetes",
+            "empresa",
+            "negocio",
+            "corporativo",
+            "notas de remision"
+        ]
+    },
+    {
+        "id": "gran-formato",
+        "titulo": "Gran Formato",
+        "descripcion": "Lonas, viniles, banners, letreros y señalética en calidad publicitaria y fotográfica FHD hasta 1440 DPI.",
+        "url": "404.html",
+        "icono": "fa-print",
+        "colorClase": "bg-black",
+        "keywords": [
+            "lonas",
+            "vinil",
+            "viniles",
+            "microperforado",
+            "banners",
+            "roll up",
+            "espectaculares",
+            "letreros",
+            "señaletica",
+            "lona impresa",
+            "lona 13 oz",
+            "lona traslucida",
+            "lona campañana",
+            "fhd",
+            "1440 dpi",
+            "tela banner"
+        ]
+    },
+    {
+        "id": "promocionales",
+        "titulo": "Artículos Promocionales y Textiles",
+        "descripcion": "Artículos personalizados, playeras con DTF o sublimación, tazas, termos y utilitarios para fortalecer tu marca.",
+        "url": "404.html",
+        "icono": "fa-shirt",
+        "colorClase": "bg-gray",
+        "keywords": [
+            "playeras",
+            "tazas",
+            "plumas",
+            "boligrafos",
+            "termos",
+            "gorras",
+            "llaveros",
+            "sublimacion",
+            "serigrafia",
+            "regalos",
+            "merch",
+            "dtf",
+            "textil",
+            "sudadera",
+            "uniforme"
+        ]
+    },
+    {
+        "id": "corte-suaje",
+        "titulo": "Corte y Suaje",
+        "descripcion": "Stickers, etiquetas y empaques con formas creativas y cortes precisos a contorno.",
+        "url": "404.html",
+        "icono": "fa-box-open",
+        "colorClase": "bg-gold",
+        "keywords": [
+            "stickers",
+            "etiquetas",
+            "calcomanias",
+            "pegatinas",
+            "cajas",
+            "empaques",
+            "suaje",
+            "corte a contorno",
+            "plotter",
+            "troquel"
+        ]
+    },
+    {
+        "id": "cnc-laser",
+        "titulo": "CNC Láser",
+        "descripcion": "Cortes y grabados milimétricos en acrílico, madera, MDF y cartulina.",
+        "url": "404.html",
+        "icono": "fa-microchip",
+        "colorClase": "bg-blue",
+        "keywords": [
+            "corte laser",
+            "grabado laser",
+            "mdf",
+            "acrilico",
+            "madera",
+            "letras 3d",
+            "anuncios luminosos",
+            "cnc",
+            "caja de luz",
+            "cartulina",
+            "triplay"
+        ]
+    },
+    {
+        "id": "impresion-3d",
+        "titulo": "Impresión 3D",
+        "descripcion": "Prototipado rápido y fabricación de piezas plásticas a la medida en PLA, PETG y resina.",
+        "url": "404.html",
+        "icono": "fa-cube",
+        "colorClase": "bg-black",
+        "keywords": [
+            "impresion 3d",
+            "piezas 3d",
+            "prototipos",
+            "pla",
+            "petg",
+            "resina",
+            "modelado 3d",
+            "figuras",
+            "refacciones plasticas",
+            "stl",
+            "sldprt",
+            "3mf"
+        ]
+    },
+    {
+        "id": "diseno-grafico",
+        "titulo": "Diseño Gráfico",
+        "descripcion": "Creación de identidad visual, logotipos y material publicitario desde cero.",
+        "url": "404.html",
+        "icono": "fa-pen-nib",
+        "colorClase": "bg-gray",
+        "keywords": [
+            "diseño",
+            "logos",
+            "logotipos",
+            "identidad visual",
+            "branding",
+            "redes sociales",
+            "posters",
+            "carteles",
+            "edicion"
+        ]
+    },
+    {
+        "id": "sellos",
+        "titulo": "Sellos de Goma",
+        "descripcion": "Sellos automáticos y de madera tradicionales, con opción de mecanismo o repuesto de goma.",
+        "url": "404.html",
+        "icono": "fa-stamp",
+        "colorClase": "bg-blue",
+        "keywords": [
+            "sello",
+            "sellos",
+            "goma",
+            "automatico",
+            "madera",
+            "mecanismo",
+            "banco"
+        ]
+    },
+    {
+        "id": "invitaciones",
+        "titulo": "Invitaciones",
+        "descripcion": "Invitaciones impresas, digitales, interactivas en video y con acabados láser para bodas, XV años y eventos.",
+        "url": "404.html",
+        "icono": "fa-envelope",
+        "colorClase": "bg-gold",
+        "keywords": [
+            "invitacion",
+            "invitaciones",
+            "boda",
+            "xv",
+            "fiesta",
+            "bautizo",
+            "evento",
+            "digitales",
+            "video"
+        ]
+    },
+    {
+        "id": "rotulacion",
+        "titulo": "Rotulación y Señalética",
+        "descripcion": "Rotulación vehicular para flotas o autos particulares y señalización profesional para negocios.",
+        "url": "404.html",
+        "icono": "fa-car",
+        "colorClase": "bg-black",
+        "keywords": [
+            "rotulacion",
+            "vehiculo",
+            "coche",
+            "carro",
+            "flotilla",
+            "senaletica",
+            "señal",
+            "letrero"
+        ]
+    },
+    {
+        "id": "laminados",
+        "titulo": "Laminados y Enmicados",
+        "descripcion": "Protección y acabados térmicos o en frío en brillante, mate, metálico y holográfico.",
+        "url": "404.html",
+        "icono": "fa-clone",
+        "colorClase": "bg-gray",
+        "keywords": [
+            "laminado",
+            "brillante",
+            "mate",
+            "holografico",
+            "metalico",
+            "frio",
+            "termico",
+            "enmicado",
+            "tabloide",
+            "mica",
+            "coroplast"
+        ]
+    },
+    {
+        "id": "posters_cuadros",
+        "titulo": "Posters y Cuadros",
+        "descripcion": "Impresión de posters a la medida y cuadros decorativos de alta resolución.",
+        "url": "404.html",
+        "icono": "fa-image",
+        "colorClase": "bg-blue",
+        "keywords": [
+            "poster",
+            "posters",
+            "cuadro",
+            "cuadros",
+            "lienzo",
+            "fotografia"
+        ]
+    }
+]

@@ -1,776 +1,275 @@
-/* secciones.css */
-/* =========================================
-   ESTILOS PARA PÁGINAS INDEPENDIENTES 
-   (Contacto y Galería)
-   ========================================= */
+/* ==========================================================================
+   RESPONSIVE.CSS - IMPRENTA ARCOIRIS (VERSIÓN MÓVIL Y TABLET)
+   Este archivo contiene exclusivamente todas las reglas @media para adaptar 
+   el diseño a diferentes tamaños de pantalla (celulares y tablets).
+   ========================================================================== */
 
-/* --- ESTRUCTURA GENERAL DE LA PÁGINA --- */
-.page-wrapper {
-    background: var(--cream);
-    padding: 150px 0 100px;
-    position: relative;
-    overflow: hidden;
-    min-height: 80vh;
-}
+/* ==========================================================================
+   1. COMPONENTES COMPARTIDOS (HEADER, BUSCADOR, FOOTER, CTA)
+   ========================================================================== */
 
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--blue-dark);
-    letter-spacing: -1px;
-    margin-bottom: 15px;
-}
-
-.section-subtitle {
-    color: var(--gray-mid);
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.container {
-    position: relative;
-    z-index: 1;
-}
-
-/* =========================================
-   ESTILOS ESPECÍFICOS DE CONTACTO
-   ========================================= */
-
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    background: var(--white);
-    border-radius: 24px;
-    box-shadow: var(--shadow-lg);
-    overflow: hidden;
-    margin-bottom: 60px;
-    border: 1px solid var(--border-color);
-}
-
-/* Lado Izquierdo: Información */
-.contact-info-panel {
-    background: var(--blue-dark);
-    color: var(--white);
-    padding: 50px 40px;
-    position: relative;
-    overflow: hidden;
-}
-
-.contact-info-panel::before {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    right: -50px;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background: rgba(197, 160, 88, 0.15);
-    /* Acento Dorado */
-}
-
-.contact-info-panel h3 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    font-weight: 600;
-    position: relative;
-    z-index: 1;
-}
-
-.info-item {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-    align-items: flex-start;
-    position: relative;
-    z-index: 1;
-}
-
-.info-item i {
-    color: var(--gold);
-    font-size: 1.5rem;
-    margin-top: 5px;
-}
-
-.info-item h4 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    font-weight: 500;
-}
-
-.info-item p {
-    color: rgba(244, 239, 230, 0.7);
-    font-weight: 300;
-    font-size: 0.95rem;
-}
-
-.info-item a {
-    color: rgba(244, 239, 230, 0.7);
-    font-weight: 300;
-    transition: color 0.3s;
-}
-
-.info-item a:hover {
-    color: var(--gold);
-}
-
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 40px;
-    position: relative;
-    z-index: 1;
-}
-
-.social-links a {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: rgba(244, 239, 230, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    font-size: 1.2rem;
-    transition: all 0.3s;
-}
-
-.social-links a:hover {
-    background: var(--gold);
-    transform: translateY(-3px);
-    color: var(--black-soft);
-}
-
-/* Lado Derecho: Formulario */
-.contact-form-panel {
-    padding: 50px 60px;
-}
-
-.contact-form-panel h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color: var(--blue-dark);
-}
-
-.contact-form-panel>p {
-    color: var(--gray-mid);
-    margin-bottom: 30px;
-    font-size: 0.95rem;
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--black-soft);
-    margin-bottom: 8px;
-}
-
-.form-control {
-    width: 100%;
-    padding: 15px 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    background: var(--cream);
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
-    color: var(--black-soft);
-    transition: all 0.3s ease;
-    outline: none;
-}
-
-.form-control:focus {
-    border-color: var(--gold);
-    background: var(--white);
-    box-shadow: 0 0 0 4px rgba(197, 160, 88, 0.15);
-    /* Sombra dorada */
-}
-
-textarea.form-control {
-    height: 150px;
-    resize: none;
-}
-
-/* Mapa Inferior */
-.full-width-map {
-    width: 100%;
-    height: 450px;
-    margin-bottom: -5px;
-}
-
-.full-width-map iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    filter: grayscale(15%);
-}
-
-/* =========================================
-   ESTILOS ESPECÍFICOS DE GALERÍA
-   ========================================= */
-
-/* Decoración de fondo */
-.bg-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    z-index: 0;
-    opacity: 0.5;
-}
-
-.blob-1 {
-    top: -100px;
-    left: -100px;
-    width: 400px;
-    height: 400px;
-    background: rgba(197, 160, 88, 0.15);
-    /* Dorado */
-}
-
-.blob-2 {
-    bottom: 10%;
-    right: -150px;
-    width: 500px;
-    height: 500px;
-    background: rgba(29, 45, 68, 0.05);
-    /* Azul muy tenue */
-}
-
-/* Filtros */
-.gallery-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 50px;
-}
-
-.filter-btn {
-    background: var(--white);
-    border: 1px solid var(--border-color);
-    padding: 10px 24px;
-    border-radius: 50px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    color: var(--gray-mid);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-sm);
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    background: var(--blue-dark);
-    color: var(--white);
-    border-color: var(--blue-dark);
-}
-
-/* Grid de Imágenes */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
-}
-
-.gallery-item {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    aspect-ratio: 4/3;
-    cursor: pointer;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    border: 1px solid var(--border-color);
-}
-
-.gallery-item.hide {
-    display: none;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-.gallery-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(17, 17, 16, 0.95) 0%, rgba(17, 17, 16, 0.1) 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding: 30px;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.gallery-overlay h4 {
-    color: var(--white);
-    font-size: 1.4rem;
-    font-weight: 600;
-    transform: translateY(20px);
-    transition: transform 0.4s ease;
-}
-
-.gallery-overlay p {
-    color: var(--gold);
-    font-size: 0.95rem;
-    transform: translateY(20px);
-    transition: transform 0.4s ease;
-    transition-delay: 0.1s;
-}
-
-.gallery-item:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--gold);
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
-}
-
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
-}
-
-.gallery-item:hover .gallery-overlay h4,
-.gallery-item:hover .gallery-overlay p {
-    transform: translateY(0);
-}
-
-/* Banner Inferior Galería */
-.cta-banner {
-    background: linear-gradient(90deg, var(--blue-dark) 0%, var(--black-soft) 100%);
-    border-radius: 24px;
-    padding: 60px 40px;
-    text-align: center;
-    margin-top: 80px;
-    box-shadow: var(--shadow-lg);
-    position: relative;
-    overflow: hidden;
-    border-top: 4px solid var(--gold);
-}
-
-.cta-banner::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(197, 160, 88, 0.2) 0%, transparent 70%);
-}
-
-.cta-banner h2 {
-    color: var(--white);
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.cta-banner p {
-    color: rgba(244, 239, 230, 0.9);
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-    position: relative;
-    z-index: 1;
-}
-
-/* =========================================
-   RESPONSIVE (MÓVILES Y TABLETS)
-   ========================================= */
+/* Pantallas medianas (Laptops pequeñas y Tablets horizontales) */
 @media (max-width: 992px) {
-    .contact-wrapper {
-        grid-template-columns: 1fr;
+
+    /* Divide la parte superior del pie de página en 2 columnas en lugar de 4 */
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+/* Pantallas pequeñas (Tablets verticales y Celulares) */
+@media (max-width: 768px) {
+
+    /* Muestra el botón de menú hamburguesa */
+    .menu-toggle {
+        display: block;
     }
 
-    .form-row {
-        grid-template-columns: 1fr;
+    /* Oculta el botón primario de acción en la cabecera para ahorrar espacio */
+    .header-actions .btn-primary {
+        display: none;
     }
 
-    .contact-form-panel {
+    /* Convierte el menú horizontal en un menú lateral oculto por defecto */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        gap: 0;
+        box-shadow: var(--shadow-md);
+        transition: all 0.4s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Clase para mostrar el menú móvil cuando se activa */
+    .nav-links.nav-active {
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Ajusta el espaciado de los enlaces del menú móvil */
+    .nav-links a {
+        padding: 15px 24px;
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
+        display: block;
+    }
+
+    /* Oculta la línea decorativa inferior en el hover del menú */
+    .nav-links a::after {
+        display: none;
+    }
+
+    /* Ajusta el ancho de la barra de búsqueda expandida para abarcar casi toda la pantalla */
+    .search-wrapper.active .header-search-expanded {
+        width: calc(100vw - 40px);
+    }
+
+    /* Oculta temporalmente el logotipo cuando se abre el buscador en celular */
+    .search-is-open #logo-container {
+        opacity: 0 !important;
+    }
+
+    /* Ajusta la cabecera de la sección de resultados a formato vertical */
+    .results-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    /* Reduce el tamaño del título de los resultados */
+    .results-header h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Reduce el padding del pie de página */
+    .main-footer {
+        padding: 60px 0 20px 0;
+    }
+
+    /* Convierte el grid del pie de página a 1 sola columna centrada */
+    .footer-top {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* Centra el texto descriptivo de la marca */
+    .brand-col p {
+        margin: 0 auto;
+    }
+
+    /* Centra la línea decorativa de los títulos del pie de página */
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Centra los elementos de información de contacto (teléfono, correo, dirección) */
+    .contact-info li {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .contact-info li i {
+        margin-bottom: 5px;
+    }
+
+    /* Centra los iconos de redes sociales */
+    .footer-socials {
+        justify-content: center;
+    }
+
+    /* Centra el texto de la barra inferior (copyright) */
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Pasa el banner de "Llamado a la acción (CTA)" a columna única y centra todo */
+    .cta-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
         padding: 40px 30px;
     }
+
+    .cta-content {
+        flex-direction: column;
+    }
 }
 
-/* =========================================
-   ESTILOS UNIFICADOS PARA LOS SERVICIOS
-   ========================================= */
+/* ==========================================================================
+   2. PÁGINA: INICIO (index.html)
+   ========================================================================== */
 
-/* --- HERO SECTION --- */
-.service-hero {
-    padding: 150px 0 80px;
-    background: var(--cream);
-    text-align: center;
+/* Pantallas grandes y medianas */
+@media (max-width: 1024px) {
+
+    /* Convierte la sección principal (Hero) de 2 columnas a 1 columna centrada */
+    .hero .container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* Centra la descripción principal */
+    .hero-desc {
+        margin: 0 auto 40px;
+    }
+
+    /* Centra los botones y características de la cabecera */
+    /* ==========================================================================
+   BOTONES DEL HERO (En una misma línea horizontal)
+   ========================================================================== */
+    .hero-buttons {
+        display: flex;
+        flex-direction: row;
+        /* Forzamos la alineación horizontal */
+        align-items: center;
+        justify-content: flex-start;
+        /* O 'center' si los prefieres centrados */
+        flex-wrap: nowrap;
+        /* Evita que bajen a la siguiente línea */
+        gap: 15px;
+        margin-bottom: 50px;
+    }
+
+    /* ==========================================================================
+   CARACTERÍSTICAS DEL HERO (2 en fila y el 3ro centrado abajo)
+   ========================================================================== */
+    .hero-features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    /* Los primeros 2 elementos ocupan la mitad de la fila (2 por fila) */
+    .hero-features .h-feature:nth-child(1),
+    .hero-features .h-feature:nth-child(2) {
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+
+    /* El tercer elemento ocupa el 100% del ancho y centra su contenido interior */
+    .hero-features .h-feature:nth-child(3) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        justify-content: center;
+        /* Centra el icono y texto del tercer elemento */
+    }
+
+    /* Pasa la cuadrícula de características generales de 4 a 2 columnas */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Adapta el banner de entregas, pasando a 1 columna y dejando espacio para la imagen abajo */
+    .delivery-banner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 20px 30px 260px;
+        margin-top: 80px;
+    }
+
+    /* Centra textos en el banner de entregas */
+    .delivery-text p {
+        margin: 0 auto 25px;
+    }
+
+    .delivery-text h3 {
+        justify-content: center;
+    }
+
+    /* Posiciona la imagen del repartidor en la base centrada */
+    .delivery-img {
+        right: 50%;
+        transform: translateX(50%);
+        height: 240px;
+        bottom: 0;
+    }
 }
 
-.hero-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-    text-align: left;
+/* Pantallas pequeñas (Celulares) */
+@media (max-width: 768px) {
+
+    /* Reduce el espaciado vertical de la sección Hero */
+    .hero {
+        padding: 20px 0 60px;
+    }
+
+    /* Reduce el tamaño del título principal para que no desborde */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    /* Pasa la cuadrícula de características de 2 a 1 columna */
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-.hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--white);
-    color: var(--gold);
-    padding: 8px 18px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 25px;
-    box-shadow: var(--shadow-sm);
-}
+/* ==========================================================================
+   3. PÁGINAS DE SERVICIOS (papeleria.html, gran-formato.html, etc.)
+   ========================================================================== */
 
-.service-hero h1,
-.hero-text h1 {
-    font-size: clamp(2.8rem, 5vw, 4rem);
-    color: var(--blue-dark);
-    margin-bottom: 20px;
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-
-.service-hero h1 span,
-.hero-text h1 span {
-    color: var(--gold);
-}
-
-.service-hero p {
-    color: var(--gray-mid);
-    font-size: 1.15rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
-}
-
-.hero-text p {
-    color: var(--gray-mid);
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-}
-
-.hero-img img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: var(--shadow-lg);
-}
-
-/* --- DETALLES GENERALES --- */
-.service-details {
-    padding: 80px 0;
-    background: var(--white);
-}
-
-.details-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.details-img img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: var(--shadow-lg);
-}
-
-.details-text h2 {
-    font-size: 2.2rem;
-    color: var(--blue-dark);
-    margin-bottom: 20px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.details-text p {
-    color: var(--gray-mid);
-    margin-bottom: 20px;
-    font-size: 1.05rem;
-}
-
-/* Listas */
-.service-list {
-    margin-top: 25px;
-    margin-bottom: 30px;
-}
-
-.service-list li {
-    margin-bottom: 12px;
-    font-size: 1rem;
-    color: var(--black-soft);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 500;
-}
-
-.service-list li i {
-    color: var(--gold);
-}
-
-.service-list.icon-bg li i {
-    background: var(--cream);
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-}
-
-/* --- COMPONENTES ESPECÍFICOS --- */
-/* Tarjetas de características */
-.features-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin: 30px 0;
-}
-
-.f-card {
-    background: var(--cream);
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
-}
-
-.f-card i {
-    color: var(--gold);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-.f-card h4 {
-    color: var(--blue-dark);
-    font-size: 1.05rem;
-    margin-bottom: 5px;
-}
-
-.f-card p {
-    color: var(--gray-mid);
-    font-size: 0.85rem;
-}
-
-/* Cuadrícula de 3 columnas (Diseño Gráfico, Procesos) */
-.design-grid,
-.process-steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding: 60px 0;
-}
-
-.design-card,
-.step-card {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 40px 30px;
-    text-align: center;
-    transition: all 0.3s;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
-}
-
-.design-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--gold);
-}
-
-.design-icon {
-    width: 70px;
-    height: 70px;
-    background: var(--cream);
-    color: var(--gold);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    margin: 0 auto 20px;
-    transition: all 0.3s;
-}
-
-.design-card:hover .design-icon {
-    background: var(--gold);
-    color: var(--white);
-}
-
-.design-card h3,
-.step-card h4 {
-    color: var(--blue-dark);
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.design-card p,
-.step-card p {
-    color: var(--gray-mid);
-    font-size: 0.95rem;
-}
-
-/* Etiquetas y Alertas */
-.services-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 30px;
-}
-
-.tag {
-    background: var(--white);
-    border: 1px solid var(--border-color);
-    padding: 8px 15px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    color: var(--blue-dark);
-    font-weight: 500;
-    box-shadow: var(--shadow-sm);
-}
-
-.tag i {
-    color: var(--gold);
-    margin-right: 5px;
-}
-
-.alert-box {
-    background: var(--cream);
-    padding: 20px;
-    border-radius: 12px;
-    border-left: 4px solid var(--gold);
-    margin-bottom: 30px;
-}
-
-.alert-box h4 {
-    color: var(--gold);
-    margin-bottom: 5px;
-    font-size: 1rem;
-}
-
-.alert-box p {
-    color: var(--blue-dark);
-    font-size: 0.85rem;
-    margin: 0;
-}
-
-/* Banners (Gran Formato) */
-.full-banner {
-    width: 100%;
-    height: 400px;
-    background-image: url('https://images.unsplash.com/photo-1598620617377-3bfb505b4384?ixlib=rb-4.0.3');
-    background-size: cover;
-    background-position: center;
-    border-radius: 30px;
-    box-shadow: var(--shadow-lg);
-    margin-bottom: 80px;
-    position: relative;
-}
-
-.full-banner::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 30px;
-}
-
-/* Layouts alternos (Promocionales, Papelería) */
-.promo-layout,
-.corp-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.list-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.list-item {
-    background: var(--cream);
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-}
-
-.list-item h4 {
-    color: var(--blue-dark);
-    font-size: 1.05rem;
-    margin-bottom: 5px;
-}
-
-.list-item p {
-    color: var(--gray-mid);
-    font-size: 0.85rem;
-}
-
-.list-item i {
-    color: var(--gold);
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-}
-
-/* Proceso numerado (Digital) */
-.step-number {
-    width: 50px;
-    height: 50px;
-    background: var(--blue-dark);
-    color: var(--gold);
-    font-size: 1.5rem;
-    font-weight: 700;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-}
-
-/* Responsividad de Servicios */
+/* Pantallas medianas (Tablets) */
 @media (max-width: 992px) {
 
+    /* Cambia las cuadrículas de procesos y diseño de 3 a 2 columnas */
     .design-grid,
     .process-steps {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* Cambia los bloques de información e imágenes a 1 sola columna centrada */
     .hero-layout,
     .details-grid,
     .promo-layout,
@@ -779,11 +278,14 @@ textarea.form-control {
         text-align: center;
     }
 
+    /* Asegura que la imagen siempre quede por encima del texto en el celular */
     .hero-layout .hero-img,
-    .promo-layout .promo-img {
+    .promo-layout .promo-img,
+    .corp-grid .corp-img {
         order: -1;
     }
 
+    /* Reordena la cuadrícula de detalles (texto abajo, imagen arriba) */
     .details-grid .details-text {
         order: 1;
     }
@@ -793,8 +295,10 @@ textarea.form-control {
     }
 }
 
+/* Pantallas pequeñas (Celulares) */
 @media (max-width: 768px) {
 
+    /* Convierte todas las cuadrículas de servicios a 1 sola columna */
     .design-grid,
     .process-steps,
     .list-wrap,
@@ -802,13 +306,250 @@ textarea.form-control {
         grid-template-columns: 1fr;
     }
 
+    /* Reduce la altura del banner con imagen completa (ej. foto de imprenta) */
     .full-banner {
         height: 250px;
         border-radius: 15px;
         margin-bottom: 40px;
     }
 
+    /* Centra las etiquetas o 'tags' de los servicios */
     .services-tags {
         justify-content: center;
+    }
+
+    /* Reduce el padding de la cabecera de servicios */
+    .service-hero {
+        padding: 20px 0 60px;
+    }
+
+    /* Reduce los títulos en las páginas de servicios */
+    .service-hero h1,
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .details-text h2.title {
+        font-size: 1.8rem;
+    }
+}
+
+/* ==========================================================================
+   4. PÁGINA: CONTACTO (contacto.html)
+   ========================================================================== */
+
+/* Pantallas medianas y celulares */
+@media (max-width: 992px) {
+
+    /* Pasa el panel de contacto de 2 columnas (información / formulario) a 1 columna */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    /* Hace que los campos del formulario ocupen el ancho completo en lugar de estar en 2 columnas */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduce el padding lateral del panel del formulario */
+    .contact-form-panel {
+        padding: 40px 30px;
+    }
+}
+
+/* ==========================================================================
+   5. PÁGINA: GALERÍA Y NOSOTROS (galeria.html)
+   ========================================================================== */
+
+/* Pantallas medianas (Tablets) */
+@media (max-width: 992px) {
+
+    /* Cambia la cuadrícula de categorías de 3 a 2 columnas */
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Pantallas pequeñas (Celulares) */
+@media (max-width: 768px) {
+
+    /* Mantiene 2 columnas en categorías, pero reduce los márgenes */
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    /* Reduce el espaciado interior de las tarjetas de categoría */
+    .cat-card {
+        padding: 30px 15px;
+    }
+
+    /* Ajusta los tamaños de iconos y fuentes en categorías */
+    .cat-card i {
+        font-size: 2rem;
+    }
+
+    .cat-card h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Hace que el modal de imágenes o videos ocupe toda la pantalla del celular sin bordes redondeados */
+    .modal-container {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    /* Oculta los botones de cambio de dispositivo (simulador desktop/mobile) en celulares */
+    .device-toggles {
+        display: none;
+    }
+
+    /* Expande el contenedor del Iframe a toda la altura disponible */
+    .iframe-wrapper {
+        height: 100%;
+    }
+
+    /* Quita bordes y radios al Iframe (video/imagen) en celulares */
+    .iframe-wrapper iframe {
+        width: 100% !important;
+        border-radius: 0 !important;
+        border: none !important;
+    }
+}
+
+/* Celulares muy pequeños (Pantallas antiguas) */
+@media (max-width: 480px) {
+
+    /* Cambia la cuadrícula de categorías a 1 sola columna */
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   TARJETAS EN MÓVIL: Icono arriba del título (Grid de 2 columnas)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* Mantiene las tarjetas en 2 columnas (dos por cada fila) */
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    /* Redefinimos el grid interno de la tarjeta en 3 filas:
+       Fila 1: Icono
+       Fila 2: Título
+       Fila 3: Botón "Saber más" */
+    .service-card {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto auto auto !important;
+        grid-template-areas:
+            "icon"
+            "title"
+            "button" !important;
+        row-gap: 10px !important;
+        justify-items: center !important;
+        /* Centra los elementos horizontalmente */
+        text-align: center !important;
+        /* Centra el texto del título */
+        padding: 15px 10px !important;
+    }
+
+    /* Fila 1: El icono centrado arriba */
+    .service-card .service-icon-box {
+        grid-area: icon !important;
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 1.1rem !important;
+        margin: 0 auto !important;
+    }
+
+    /* Fila 2: El título centrado debajo del icono */
+    .service-card h3 {
+        grid-area: title !important;
+        font-size: 0.85rem !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+    }
+
+    /* El párrafo sigue oculto */
+    .service-card p {
+        display: none !important;
+    }
+
+    /* Fila 3: El botón abajo ocupando todo el ancho disponible de la tarjeta */
+    .service-card .link-more {
+        grid-area: button !important;
+        display: flex !important;
+        width: 100% !important;
+        justify-content: center !important;
+        margin-top: 5px !important;
+        padding: 6px 10px !important;
+        font-size: 0.75rem !important;
+    }
+}
+
+/* ==========================================================================
+   AJUSTES EXTRA PARA ETIQUETAS EN MÓVIL (Añadir al final de secciones.css)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .materials-section .services-tags {
+        justify-content: center;
+    }
+
+    .complementary-services .list-item {
+        text-align: center;
+    }
+
+    .complementary-services .list-item i {
+        margin: 0 auto 15px auto;
+        display: block;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE PARA CATÁLOGO DE PAPELES (Añadir a secciones.css)
+   ========================================================================== */
+@media (max-width: 1024px) {
+
+    /* Pasa el catálogo de papeles a 2 columnas en tablets */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Pasa el catálogo de papeles a 1 columna en celulares */
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   MODIFICACIONES RESPONSIVE: IMÁGENES SOBRESALIENTES EN TARJETAS
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Ajustamos el espacio en celulares */
+    .service-grid {
+        gap: 30px 12px !important;
+        margin-top: 50px !important;
+    }
+
+    /* Reducimos el tamaño de la imagen flotante para móviles */
+    .service-pop-img {
+        width: 120px;
+        right: -5px;
+        top: -20px;
+    }
+
+    /* Como la estructura en celular pone todo al centro, quitamos el espacio extra del título */
+    .service-card h3 {
+        padding-right: 0 !important;
     }
 }

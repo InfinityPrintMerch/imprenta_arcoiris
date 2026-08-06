@@ -14,740 +14,360 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* =========================================
-           ESTILOS ESPECÍFICOS DEL INDEX
-           ========================================= */
-
-        /* --- 1. HERO SECTION --- */
-        .hero {
-            padding: 160px 0 80px;
-            background: var(--cream);
-            overflow: hidden;
-        }
-
-        .hero .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--white);
-            color: var(--gold);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .hero-badge i {
-            font-size: 1rem;
-        }
-
-        .hero-title {
-            font-size: clamp(3.5rem, 6vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            color: var(--blue-dark);
-            margin-bottom: 25px;
-            letter-spacing: -1px;
-        }
-
-        .hero-title span {
-            color: var(--gold);
-            position: relative;
-        }
-
-        .hero-title span::after {
-            content: '';
-            position: absolute;
-            bottom: 8px;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: var(--gold);
-            border-radius: 4px;
-            opacity: 0.3;
-        }
-
-        .hero-desc {
-            font-size: 1.15rem;
-            color: var(--gray-mid);
-            margin-bottom: 40px;
-            max-width: 450px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 50px;
-        }
-
-        .hero-features {
-            display: flex;
-            gap: 30px;
-        }
-
-        .h-feature {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .h-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--white);
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--gold);
-        }
-
-        .h-text h5 {
-            font-size: 0.9rem;
-            color: var(--blue-dark);
-            font-weight: 600;
-        }
-
-        .h-text p {
-            font-size: 0.8rem;
-            color: var(--gray-mid);
-        }
-
-        .hero-image {
-            position: relative;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            transform: scale(1.1);
-        }
-
-        /* --- 2. PRODUCTOS DESTACADOS --- */
-        .products {
-            padding: 100px 0;
-            background: var(--white);
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .product-card {
-            background: var(--white);
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
-            padding-bottom: 20px;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--gold);
-        }
-
-        .product-img-box {
-            position: relative;
-            height: 220px;
-            background: var(--cream);
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .product-img-box img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            mix-blend-mode: multiply;
-        }
-
-        /* Iconos de la paleta oficial */
-        .product-icon {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 35px;
-            height: 35px;
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--white);
-            font-size: 1rem;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .bg-gold {
-            background: var(--gold);
-        }
-
-        .bg-blue {
-            background: var(--blue-dark);
-        }
-
-        .bg-black {
-            background: var(--black-soft);
-        }
-
-        .bg-gray {
-            background: var(--gray-mid);
-        }
-
-        .product-content {
-            padding: 25px 20px 0;
-        }
-
-        .product-content h3 {
-            font-size: 1.15rem;
-            color: var(--blue-dark);
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .product-content p {
-            font-size: 0.9rem;
-            color: var(--gray-mid);
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .link-more {
-            color: var(--gold);
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: gap 0.3s;
-        }
-
-        .product-card:hover .link-more {
-            gap: 10px;
-            color: var(--blue-dark);
-        }
-
-        /* --- 3. BANNER DE ENVÍOS --- */
-        .delivery-banner {
-            margin: 50px auto 100px;
-            background: var(--cream);
-            border: 1px solid var(--border-color);
-            border-radius: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 40px 60px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .delivery-text {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            z-index: 2;
-        }
-
-        .delivery-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--blue-dark);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--gold);
-            font-size: 1.5rem;
-        }
-
-        .delivery-text h3 {
-            font-size: 1.5rem;
-            color: var(--blue-dark);
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        .delivery-text p {
-            color: var(--gray-mid);
-            font-size: 1rem;
-        }
-
-        .delivery-img {
-            position: absolute;
-            right: 20px;
-            bottom: -20px;
-            height: 140%;
-            z-index: 1;
-        }
-
-        .delivery-img img {
-            height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.1));
-        }
-
-        /* --- 4. POR QUÉ ELEGIRNOS --- */
-        .features {
-            padding: 0 0 100px;
-            background: var(--white);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .feat-card {
-            display: flex;
-            gap: 15px;
-            align-items: flex-start;
-        }
-
-        .feat-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.3rem;
-            flex-shrink: 0;
-            color: var(--white);
-        }
-
-        .feat-text h4 {
-            font-size: 1.05rem;
-            color: var(--blue-dark);
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .feat-text p {
-            font-size: 0.85rem;
-            color: var(--gray-mid);
-            line-height: 1.4;
-        }
-
-        /* --- 5. CTA PRE-FOOTER --- */
-        .cta-banner {
-            background: linear-gradient(90deg, var(--blue-dark) 0%, var(--black-soft) 100%);
-            border-radius: 20px;
-            padding: 40px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: -50px;
-            position: relative;
-            z-index: 10;
-            box-shadow: var(--shadow-lg);
-            border-top: 4px solid var(--gold);
-        }
-
-        .cta-content {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            color: var(--white);
-        }
-
-        .cta-content i {
-            font-size: 2.5rem;
-            color: var(--gold);
-        }
-
-        .cta-content h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .cta-content p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            color: var(--cream);
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 1024px) {
-            .hero .container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-desc {
-                margin: 0 auto 40px;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-features {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .delivery-banner {
-                flex-direction: column;
-                text-align: center;
-                padding: 40px 30px 180px;
-            }
-
-            .delivery-text {
-                flex-direction: column;
-            }
-
-            .delivery-img {
-                right: 50%;
-                transform: translateX(50%);
-                bottom: 0;
-                height: 160px;
-            }
-
-            .cta-banner {
-                flex-direction: column;
-                text-align: center;
-                gap: 30px;
-                padding: 40px 30px;
-            }
-
-            .cta-content {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 120px 0 60px;
-            }
-
-            .hero-title {
-                font-size: 2.8rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="secciones.css">
 </head>
 
 <body>
-
-    <!-- WIDGET HEADER -->
     <div id="header-placeholder"></div>
 
-    <!-- 1. HERO SECTION -->
-    <section class="hero">
+    <!-- ÁREA DE RESULTADOS DE BÚSQUEDA -->
+    <section id="search-results-area"
+        style="display: none; padding: 140px 0 100px; background: #faf8f5; min-height: 70vh;">
         <div class="container">
-            <div class="hero-content fade-in-up">
-                <div class="hero-badge">
-                    <i class="fa-solid fa-star"></i> Impresión de calidad, siempre
-                </div>
-                <h1 class="hero-title">Imprimimos <br> tus <span>ideas</span></h1>
-                <p class="hero-desc">Soluciones de impresión para tu negocio, eventos o proyectos personales. Calidad,
-                    rapidez y atención personalizada.</p>
-
-                <div class="hero-buttons">
-                    <a href="#productos" class="btn btn-primary">Ver productos <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                    <a href="contacto.html" class="btn btn-outline">Cotiza ahora <i
-                            class="fa-regular fa-file-lines"></i></a>
-                </div>
-
-                <div class="hero-features">
-                    <div class="h-feature">
-                        <div class="h-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                        <div class="h-text">
-                            <h5>Alta calidad</h5>
-                            <p>Materiales premium</p>
-                        </div>
-                    </div>
-                    <div class="h-feature">
-                        <div class="h-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                        <div class="h-text">
-                            <h5>Entregas rápidas</h5>
-                            <p>En tiempo y forma</p>
-                        </div>
-                    </div>
-                    <div class="h-feature">
-                        <div class="h-icon"><i class="fa-solid fa-headset"></i></div>
-                        <div class="h-text">
-                            <h5>Atención a medida</h5>
-                            <p>Te ayudamos siempre</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="results-header"
+                style="margin-bottom: 50px; padding-bottom: 25px; border-bottom: 2px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="margin: 0; font-size: 2.2rem; color: #0f172a; font-weight: 800;">Resultados para: <span
+                        id="searchTermDisplay" style="color: #d4af37; position: relative;"></span></h2>
+                <span id="resultsCount">0 servicios encontrados</span>
             </div>
-
-            <div class="hero-image fade-in-up" style="transition-delay: 0.2s;">
-                <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="Mockups Imprenta" style="border-radius: 20px; box-shadow: var(--shadow-lg);">
-            </div>
+            <div class="service-grid" id="resultsGrid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;"></div>
         </div>
     </section>
 
-    <!-- 2. PRODUCTOS DESTACADOS -->
-    <section id="productos" class="products">
-        <div class="container">
-            <div class="text-center fade-in-up">
-                <span class="subtitle">¿Qué imprimimos?</span>
-                <h2 class="title">Productos destacados</h2>
-                <p class="desc">Conoce nuestra variedad de productos y encuentra lo que necesitas para destacar.</p>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main id="main-content">
+        <!-- 1. HERO SECTION -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content fade-in-up">
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-star"></i> Impresión de calidad, siempre
+                    </div>
+                    <h1 class="hero-title">Imprimimos <br> tus <span>ideas</span></h1>
+                    <p class="hero-desc">Soluciones de impresión para tu negocio, eventos o proyectos personales.
+                        Calidad, rapidez y atención personalizada.</p>
+                    <div class="hero-buttons">
+                        <a href="#servicios" class="btn btn-primary">Servicios <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                        <a href="contacto.html" class="btn btn-outline">Cotizar<i
+                                class="fa-regular fa-file-lines"></i></a>
+                    </div>
+                    <div class="hero-features">
+                        <div class="h-feature">
+                            <div class="h-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="h-text">
+                                <h5>Alta calidad</h5>
+                                <p>Materiales premium</p>
+                            </div>
+                        </div>
+                        <div class="h-feature">
+                            <div class="h-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                            <div class="h-text">
+                                <h5>Entregas rápidas</h5>
+                                <p>En tiempo y forma</p>
+                            </div>
+                        </div>
+                        <div class="h-feature">
+                            <div class="h-icon"><i class="fa-solid fa-headset"></i></div>
+                            <div class="h-text">
+                                <h5>Atención a medida</h5>
+                                <p>Te ayudamos siempre</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image fade-in-up" style="transition-delay: 0.2s;">
+                    <img src="https://img.magnific.com/foto-gratis/joven-disenadora-trabajando-proyecto_23-2149142097.jpg?t=st=1785792262~exp=1785795862~hmac=5220417972630aac7aa2968e886494489a9ee40f30e5115867e9703613c35056&w=1480"
+                        alt="Mockups Imprenta">
+                </div>
             </div>
+        </section>
 
-            <div class="product-grid">
-                <!-- Tarjeta 1 -->
-                <div class="product-card fade-in-up">
-                    <div class="product-img-box">
-                        <div class="product-icon bg-blue"><i class="fa-solid fa-book-open"></i></div>
-                        <img src="https://images.unsplash.com/photo-1562664377-709f2c337eb2?ixlib=rb-4.0.3"
-                            alt="Impresión Digital">
-                    </div>
-                    <div class="product-content">
+        <!-- 2. PRODUCTOS DESTACADOS -->
+        <section id="servicios" class="products">
+            <div class="container">
+                <div class="text-center fade-in-up">
+                    <span class="subtitle">¿Qué ofrecemos?</span>
+                    <h2 class="title">Nuestros Servicios</h2>
+                    <p class="desc">Descubre todas las soluciones que tenemos para materializar tus proyectos con
+                        acabados profesionales.</p>
+                </div>
+
+                <div class="service-grid">
+
+                    <!-- Fila 1: Los 3 Visibles por defecto -->
+                    <div class="service-card fade-in-up">
+                        <img src="assets/img/servicios/impresion-digital.png" alt="Impresión Digital"
+                            class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngegg.com/path/980/429/113/tabloid-financial-quote-promotion-net-copiadoras-campus-tabloid-4500822016f700abea0c797808db2c1c.png';">
                         <h3>Impresión Digital</h3>
-                        <p>Volantes, folletos, tarjetas, catálogos y más.</p>
-                        <a href="servicios/impresion-digital.html" class="link-more">Ver más <i
+                        <p>Volantes, folletos, tarjetas, catálogos y papelería express de alta resolución.</p>
+                        <a href="servicios/impresion-digital.html" class="link-more">Saber más <i
                                 class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                </div>
 
-                <!-- Tarjeta 2 -->
-                <div class="product-card fade-in-up" style="transition-delay: 0.1s;">
-                    <div class="product-img-box">
-                        <div class="product-icon bg-gold"><i class="fa-solid fa-layer-group"></i></div>
-                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3"
-                            alt="Papelería Corporativa">
-                    </div>
-                    <div class="product-content">
-                        <h3>Papelería Corporativa</h3>
-                        <p>Tarjetas de presentación y materiales premium.</p>
-                        <a href="servicios/papeleria.html" class="link-more">Ver más <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 3 -->
-                <div class="product-card fade-in-up" style="transition-delay: 0.2s;">
-                    <div class="product-img-box">
-                        <div class="product-icon bg-black"><i class="fa-solid fa-print"></i></div>
-                        <img src="https://images.unsplash.com/photo-1598620617377-3bfb505b4384?ixlib=rb-4.0.3"
-                            alt="Gran Formato">
-                    </div>
-                    <div class="product-content">
+                    <div class="service-card fade-in-up" style="transition-delay: 0.1s;">
+                        <img src="assets/img/servicios/gran-formato.png" alt="Gran Formato" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngegg.com/path/312/978/488/digital-printing-wide-format-printer-polyvinyl-chloride-machine-business-69b879fae3e675d4588a952c3fc491d2.png';">
                         <h3>Gran Formato</h3>
-                        <p>Lonas, viniles, banners, letreros y señalética.</p>
-                        <a href="servicios/gran-formato.html" class="link-more">Ver más <i
+                        <p>Lonas, viniles, banners, letreros y señalética para destacar a lo grande.</p>
+                        <a href="servicios/gran-formato.html" class="link-more">Saber más <i
                                 class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                </div>
 
-                <!-- Tarjeta 4 -->
-                <div class="product-card fade-in-up" style="transition-delay: 0.3s;">
-                    <div class="product-img-box">
-                        <div class="product-icon bg-gray"><i class="fa-solid fa-shirt"></i></div>
-                        <img src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3"
-                            alt="Promocionales">
+                    <div class="service-card fade-in-up" style="transition-delay: 0.2s;">
+                        <img src="assets/img/servicios/papeleria.png" alt="Papelería Corporativa"
+                            class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngegg.com/path/205/83/602/paper-business-card-design-business-cards-printing-visiting-card-business-card-5c206c173a93634724175e3f2fb8688c.png';">
+                        <h3>Papelería Corporativa</h3>
+                        <p>Tarjetas de presentación y materiales premium para tu negocio.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <div class="product-content">
-                        <h3>Artículos Promocionales</h3>
+
+                    <!-- Fila 2 en adelante: OCULTOS -->
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/diseno.png" alt="Diseño" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngwing.com/path/595/432/1016/graphic-designer-graphic-design-business-d06103176886b5dd8bba486f42e62967.png';">
+                        <h3>Diseño Gráfico</h3>
+                        <p>Asesoría y creación de piezas visuales para campañas.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/serigrafia.png" alt="Serigrafía" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngwing.com/path/990/513/245/printed-t-shirt-screen-printing-t-shirt-f7b696096f5b755ba4c7196df175398d.png';">
+                        <h3>Serigrafía</h3>
+                        <p>Impresión de diseños de alta durabilidad en diversas superficies.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/promocionales.png" alt="Promocionales" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngegg.com/path/239/453/312/promotional-merchandise-printing-t-shirt-corporate-gifts-28c604456ba8b6dcd96491f35370e25c.png';">
+                        <h3>Promocionales</h3>
                         <p>Artículos personalizados y utilitarios para tu marca.</p>
-                        <a href="servicios/promocionales.html" class="link-more">Ver más <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                </div>
 
-                <!-- Tarjeta 5 -->
-                <div class="product-card fade-in-up" style="transition-delay: 0.4s;">
-                    <div class="product-img-box">
-                        <div class="product-icon bg-gold"><i class="fa-solid fa-box-open"></i></div>
-                        <img src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?ixlib=rb-4.0.3"
-                            alt="Corte y Suaje">
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/merch.png" alt="Merch" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngwing.com/path/428/489/124/printed-t-shirt-direct-to-garment-printing-screen-printing-t-shirt-printing-design-97e332b024cf1a99c4899defa352b72a.png';">
+                        <h3>Merch</h3>
+                        <p>Impresión de Playeras, Sudaderas y Accesorios personalizados.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <div class="product-content">
-                        <h3>Corte y Suaje</h3>
-                        <p>Stickers, etiquetas y empaques con formas creativas.</p>
-                        <a href="servicios/corte-suaje.html" class="link-more">Ver más <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
 
-                <!-- Tarjeta 6 -->
-                <div class="product-card fade-in-up" style="transition-delay: 0.1s;">
-                    <div class="product-img-box">
-                        <div class="product-icon bg-blue"><i class="fa-solid fa-microchip"></i></div>
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3"
-                            alt="CNC Láser">
-                    </div>
-                    <div class="product-content">
-                        <h3>CNC Láser</h3>
-                        <p>Cortes y grabados precisos en acrílico, madera y MDF.</p>
-                        <a href="servicios/cnc-laser.html" class="link-more">Ver más <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Tarjeta 7 -->
-                <div class="product-card fade-in-up" style="transition-delay: 0.2s;">
-                    <div class="product-img-box">
-                        <div class="product-icon bg-black"><i class="fa-solid fa-car-side"></i></div>
-                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3"
-                            alt="Rotulación">
-                    </div>
-                    <div class="product-content">
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/rotulacion.png" alt="Rotulación" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://content.app-sources.com/s/2957537951454028/thumbnails/640x480/Rotulaci%C3%B3n/ChatGPT_Image_12_mar_2026_05_43_11_p.m.-3359079.png?format=webp';">
                         <h3>Rotulación</h3>
                         <p>Branding vehicular y comercial en movimiento.</p>
-                        <a href="servicios/rotulacion.html" class="link-more">Ver más <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                </div>
 
-                <!-- Tarjeta 8 -->
-                <div class="product-card fade-in-up" style="transition-delay: 0.3s;">
-                    <div class="product-img-box">
-                        <div class="product-icon bg-gray"><i class="fa-solid fa-pen-nib"></i></div>
-                        <img src="https://images.unsplash.com/photo-1587588354456-ae376af71a25?ixlib=rb-4.0.3"
-                            alt="Diseño Gráfico">
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/corte-vinil.png" alt="Corte Vinil" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngwing.com/path/674/58/534/plotter-vinyl-cutter-cutting-paper-cutting-machine-0807774e2aa0bad9df908feb38bc0cbc.png';">
+                        <h3>Corte Vinil</h3>
+                        <p>Corte vinil de rotulación para vehículos y superficies.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <div class="product-content">
-                        <h3>Diseño Gráfico</h3>
-                        <p>Creación de identidad visual y material publicitario.</p>
-                        <a href="servicios/diseno-grafico.html" class="link-more">Ver más <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
 
-                <!-- Tarjeta 9 -->
-                <div class="product-card fade-in-up" style="transition-delay: 0.4s;">
-                    <div class="product-img-box">
-                        <div class="product-icon bg-gold"><i class="fa-solid fa-envelope-open-text"></i></div>
-                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3"
-                            alt="Invitaciones">
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/corte-suaje.png" alt="Corte Suaje" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://creatify.mx/wp-content/uploads/2020/10/StickerSheets-Laminado-Mate.png';">
+                        <h3>Corte y Suaje</h3>
+                        <p>Stickers, etiquetas y empaques con formas creativas.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <div class="product-content">
+
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/cnc-laser.png" alt="CNC Láser" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://i.ibb.co/qLS1xPTd/Lasser.png';">
+                        <h3>CNC Láser</h3>
+                        <p>Cortes y grabados milimétricos en acrílico, madera y MDF.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/senaletica.png" alt="Señaléticas" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://srseguridad.com/wp-content/uploads/2022/12/senaletica1-1.png';">
+                        <h3>Señaléticas</h3>
+                        <p>Diseño e impresión de señaléticas personalizadas.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/siluetas.png" alt="Siluetas" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://i.ibb.co/wNdQS8z8/siluetas.png';">
+                        <h3>Siluetas Personalizadas</h3>
+                        <p>Creación de siluetas personalizadas para eventos y promociones.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/revistas.png" alt="Revistas" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngwing.com/path/660/646/543/online-magazine-glamour-magazines-newspapers-magazine-5d63d1ee09fdd757a526328d22b244ad.png';">
+                        <h3>Revistas</h3>
+                        <p>Diseño e impresión de revistas corporativas y catálogos.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/empastados.png" alt="Empastados" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngwing.com/path/767/10/539/hardcover-paper-bookbinding-thesis-binding-49331118dada8546a1c44bfa98536ad7.png';">
+                        <h3>Empastados</h3>
+                        <p>Empastados profesionales de Tesis y Libros.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/laminado.png" alt="Laminado" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngwing.com/path/209/344/889/paper-lamination-business-cards-office-supplies-visiting-card-probe-f44d9ac62ca7aa88507eb3085aae32a0.png';">
+                        <h3>Laminado Térmico</h3>
+                        <p>Laminado térmico de protección en diversos materiales.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/invitaciones.png" alt="Invitaciones" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngwing.com/path/889/134/325/wedding-invitation-paper-atelier-isabey-printing-invitation-luxury-6db76d3a9f815f8d82c5b03aa7585d10.png';">
                         <h3>Invitaciones</h3>
-                        <p>Diseños exclusivos, en formatos físicos o digitales.</p>
-                        <a href="servicios/invitaciones.html" class="link-more">Ver más <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                        <p>Diseño e impresión de invitaciones personalizadas.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                </div>
 
-                <!-- Tarjeta 10 -->
-                <div class="product-card fade-in-up" style="transition-delay: 0.1s;">
-                    <div class="product-img-box">
-                        <div class="product-icon bg-blue"><i class="fa-solid fa-cube"></i></div>
-                        <img src="https://images.unsplash.com/photo-1629429408209-1f912961dbd8?ixlib=rb-4.0.3"
-                            alt="Impresión 3D">
-                    </div>
-                    <div class="product-content">
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/impresion-3d.png" alt="Impresión 3D" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngwing.com/path/375/384/36/3d-printing-marketplace-printer-3d-systems-printing-712aa00c37e5cfb6ff4586f77955501a.png';">
                         <h3>Impresión 3D</h3>
                         <p>Prototipado rápido y fabricación de piezas plásticas.</p>
-                        <a href="servicios/impresion-3d.html" class="link-more">Ver más <i
-                                class="fa-solid fa-arrow-right"></i></a>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/paginas-web.png" alt="Páginas Web" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://r7.pngwing.com/path/312/706/348/web-development-e-commerce-digital-marketing-web-design-e-commerce-a1f6c92225ba83b1684eb160a8bfb74b.png';">
+                        <h3>Páginas Web</h3>
+                        <p>Desarrollo y diseño de sitios web profesionales.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="service-card fade-in-up hidden-service">
+                        <img src="assets/img/servicios/insumos.png" alt="Insumos" class="service-pop-img"
+                            onerror="this.onerror=null; this.src='https://i.ibb.co/WNrLdP7p/remove-background-net-d0ef404c603b7526f6caeff07d39eacf4be3f5cbbd502480c94a159e438345ea.png';">
+                        <h3>Insumos</h3>
+                        <p>Venta de Tóner, Papel, y Materiales de Impresión.</p>
+                        <a href="404.html" class="link-more">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- 2.5 BOTÓN MOSTRAR MÁS -->
+                <div class="text-center fade-in-up" style="margin-top: 50px;">
+                    <button onclick="toggleMoreServices()" id="btnShowMore" class="btn btn-outline"
+                        style="background: var(--white); border: 2px solid var(--blue-dark); box-shadow: var(--shadow-sm); padding: 14px 32px;">
+                        Mostrar todos los servicios <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i>
+                    </button>
+                </div>
+
+                <!-- 3. BANNER DE ENVÍOS CON EFECTO POP-OUT 3D -->
+                <div class="delivery-banner fade-in-up">
+                    <div class="delivery-text">
+                        <h3><i class="fa-brands fa-whatsapp"></i> Haz tu pedido por WhatsApp</h3>
+                        <p>Cotiza tu proyecto, autoriza el diseño y anticipa el 50% de forma segura. Cuando tu trabajo
+                            esté listo, solo pasa a sucursal y recógelo rápido.</p>
+                        <a href="https://wa.me/522411250287" target="_blank" class="btn-whatsapp">Enviar mensaje <i
+                                class="fa-solid fa-paper-plane"></i></a>
+                    </div>
+                    <div class="delivery-img">
+                        <img src="assets/img/banner_whatsapp.png" alt="Pedido WhatsApp">
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- 3. BANNER DE ENVÍOS -->
-            <div class="delivery-banner fade-in-up">
-                <div class="delivery-text">
-                    <div class="delivery-icon"><i class="fa-solid fa-truck"></i></div>
-                    <div>
-                        <h3>Envíos a todo el país</h3>
-                        <p>Llegamos a donde estés. Rápido, seguro y confiable.</p>
+        <!-- 4. POR QUÉ ELEGIRNOS -->
+        <section class="features">
+            <div class="container">
+                <div class="text-center fade-in-up">
+                    <span class="subtitle">¿Por qué elegirnos?</span>
+                    <h2 class="title">Tu proyecto, en las mejores manos</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feat-card fade-in-up">
+                        <div class="feat-icon bg-blue"><i class="fa-solid fa-check"></i></div>
+                        <div class="feat-text">
+                            <h4>Calidad Garantizada</h4>
+                            <p>Utilizamos los mejores materiales.</p>
+                        </div>
+                    </div>
+                    <div class="feat-card fade-in-up" style="transition-delay: 0.1s;">
+                        <div class="feat-icon bg-gold"><i class="fa-regular fa-clock"></i></div>
+                        <div class="feat-text">
+                            <h4>Entregas Puntuales</h4>
+                            <p>Cumplimos con los tiempos.</p>
+                        </div>
+                    </div>
+                    <div class="feat-card fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="feat-icon bg-black"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="feat-text">
+                            <h4>Atención Personalizada</h4>
+                            <p>Te asesoramos en cada paso.</p>
+                        </div>
+                    </div>
+                    <div class="feat-card fade-in-up" style="transition-delay: 0.3s;">
+                        <div class="feat-icon bg-gray"><i class="fa-solid fa-certificate"></i></div>
+                        <div class="feat-text">
+                            <h4>Precios Competitivos</h4>
+                            <p>Mejor relación calidad-precio.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="delivery-img">
-                    <img src="https://cdn-icons-png.flaticon.com/512/664/664468.png" alt="Envios a todo el pais">
+                <!-- 5. CTA PRE-FOOTER -->
+                <div class="cta-banner fade-in-up" style="margin-top: 100px;">
+                    <div class="cta-content"><i class="fa-regular fa-file-lines"></i>
+                        <div>
+                            <h3>¿Tienes un proyecto en mente?</h3>
+                            <p>Cotiza sin compromiso y recibe asesoría.</p>
+                        </div>
+                    </div>
+                    <a href="contacto.html" class="btn"
+                        style="background: var(--gold); color: var(--black-soft);">Cotiza ahora <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- 4. POR QUÉ ELEGIRNOS -->
-    <section class="features">
-        <div class="container">
-            <div class="text-center fade-in-up">
-                <span class="subtitle">¿Por qué elegirnos?</span>
-                <h2 class="title">Tu proyecto, en las mejores manos</h2>
-            </div>
-
-            <div class="features-grid">
-                <div class="feat-card fade-in-up">
-                    <div class="feat-icon bg-blue"><i class="fa-solid fa-check"></i></div>
-                    <div class="feat-text">
-                        <h4>Calidad Garantizada</h4>
-                        <p>Utilizamos los mejores materiales y tecnología de impresión.</p>
-                    </div>
-                </div>
-                <div class="feat-card fade-in-up" style="transition-delay: 0.1s;">
-                    <div class="feat-icon bg-gold"><i class="fa-regular fa-clock"></i></div>
-                    <div class="feat-text">
-                        <h4>Entregas Puntuales</h4>
-                        <p>Cumplimos con los tiempos acordados.</p>
-                    </div>
-                </div>
-                <div class="feat-card fade-in-up" style="transition-delay: 0.2s;">
-                    <div class="feat-icon bg-black"><i class="fa-solid fa-user-tie"></i></div>
-                    <div class="feat-text">
-                        <h4>Atención Personalizada</h4>
-                        <p>Te asesoramos en cada paso de tu proyecto.</p>
-                    </div>
-                </div>
-                <div class="feat-card fade-in-up" style="transition-delay: 0.3s;">
-                    <div class="feat-icon bg-gray"><i class="fa-solid fa-certificate"></i></div>
-                    <div class="feat-text">
-                        <h4>Precios Competitivos</h4>
-                        <p>La mejor relación calidad-precio del mercado.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5. CTA PRE-FOOTER -->
-            <div class="cta-banner fade-in-up" style="margin-top: 100px;">
-                <div class="cta-content">
-                    <i class="fa-regular fa-file-lines"></i>
-                    <div>
-                        <h3>¿Tienes un proyecto en mente?</h3>
-                        <p>Cotiza sin compromiso y recibe asesoría personalizada.</p>
-                    </div>
-                </div>
-                <a href="contacto.html" class="btn" style="background: var(--gold); color: var(--black-soft);">Cotiza
-                    ahora <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- WIDGET FOOTER -->
     <div id="footer-placeholder"></div>
 
     <script src="components.js"></script>
+    <script src="search.js"></script>
+    <script src="assistant.js"></script>
+
+    <!-- SCRIPT PARA EL BOTÓN MOSTRAR MÁS -->
+    <script>
+        function toggleMoreServices() {
+            const hiddenServices = document.querySelectorAll('.hidden-service');
+            const btn = document.getElementById('btnShowMore');
+            const isHidden = !hiddenServices[0].classList.contains('show-service');
+
+            if (isHidden) {
+                hiddenServices.forEach(service => {
+                    service.classList.add('show-service');
+                });
+                btn.innerHTML = 'Ocultar servicios <i class="fa-solid fa-chevron-up" style="margin-left: 5px;"></i>';
+            } else {
+                hiddenServices.forEach(service => {
+                    service.classList.remove('show-service');
+                });
+                btn.innerHTML = 'Mostrar todos los servicios <i class="fa-solid fa-chevron-down" style="margin-left: 5px;"></i>';
+
+                document.getElementById('servicios').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
 </body>
 
 </html>

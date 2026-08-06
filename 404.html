@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eduardo López Salinas">
+    <title>Imprenta Arcoiris | Página no encontrada (404)</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="secciones.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- ÁREA DE RESULTADOS DE BÚSQUEDA (El css está en style.css) -->
+    <section id="search-results-area"
+        style="display: none; padding: 140px 0 100px; background: #faf8f5; min-height: 70vh;">
+        <div class="container">
+            <div class="results-header"
+                style="margin-bottom: 50px; padding-bottom: 25px; border-bottom: 2px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="margin: 0; font-size: 2.2rem; color: #0f172a; font-weight: 800;">Resultados para: <span
+                        id="searchTermDisplay" style="color: #d4af37; position: relative;"></span></h2>
+                <span id="resultsCount">0 servicios encontrados</span>
+            </div>
+            <div class="service-grid" id="resultsGrid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;"></div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL 404 -->
+    <main id="main-content">
+        <section class="error-section">
+            <div class="container">
+                <div class="error-content fade-in-up">
+
+                    <h1 class="error-title">Página no <span>encontrada</span></h1>
+                    <p class="error-desc">Lo sentimos, la página que buscas no existe, ha sido movida o está en
+                        desarrollo actualmente.</p>
+                    <div class="error-buttons">
+                        <a href="index.html" class="btn btn-primary">Volver al inicio <i
+                                class="fa-solid fa-house"></i></a>
+                        <a href="https://wa.me/522411250287?text=Hola%2C%20necesito%20ayuda%20con%20una%20pagina%20que%20no%20encontre"
+                            target="_blank" class="btn btn-whatsapp-alt">
+                            <i class="fa-brands fa-whatsapp"></i> Contactar soporte
+                        </a>
+                    </div>
+                    <div class="error-features">
+                        <div class="h-feature">
+                            <div class="h-icon"><i class="fa-solid fa-compass"></i></div>
+                            <div class="h-text">
+                                <h5>Navegación</h5>
+                                <p>Usa el menú superior</p>
+                            </div>
+                        </div>
+                        <div class="h-feature">
+                            <div class="h-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <div class="h-text">
+                                <h5 class="custom-margin-fix">Buscador</h5>
+                                <p>Encuentra servicios</p>
+                            </div>
+                        </div>
+                        <div class="h-feature">
+                            <div class="h-icon"><i class="fa-solid fa-rainbow"></i></div>
+                            <div class="h-text">
+                                <h5>Asistencia RainB</h5>
+                                <p>Atención personalizada</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="error-image fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="error-code-card">
+                        <span class="big-404">404</span>
+                        <i class="fa-solid fa-print floating-icon"></i>
+                        <p>Ups! Parece que esta hoja no pasó por la impresora correcta.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE ACCESO RÁPIDO A SERVICIOS -->
+        <section class="error-quick-services">
+            <div class="container">
+                <div class="text-center fade-in-up">
+                    <span class="subtitle">¿Te perdiste?</span>
+                    <h2 class="title">Explora nuestros servicios principales</h2>
+                    <p class="desc">Aquí tienes acceso directo a lo más solicitado por nuestros clientes.</p>
+                </div>
+                <div class="service-grid">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon-box bg-blue"><i class="fa-solid fa-book-open"></i></div>
+                        <h3>Impresión Digital</h3>
+                        <p>Volantes, folletos, tarjetas, catálogos y papelería express.</p>
+                        <a href="servicios/impresion-digital.html" class="link-more">Saber más <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card fade-in-up" style="transition-delay: 0.1s;">
+                        <div class="service-icon-box bg-gold"><i class="fa-solid fa-layer-group"></i></div>
+                        <h3>Gran Formato</h3>
+                        <p>Lonas, viniles, banners y señalética en calidad publicitaria.</p>
+                        <a href="servicios/gran-formato.html" class="link-more">Saber más <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="components.js"></script>
+    <script src="search.js"></script>
+    <script src="assistant.js"></script>
+</body>
+
+</html>
