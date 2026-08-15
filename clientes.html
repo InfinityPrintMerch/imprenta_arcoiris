@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eduardo López Salinas">
+    <title>Imprenta Arcoiris | Nuestros Clientes</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Estilos base y componentes -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="secciones.css">
+
+    <!-- Estilos exclusivos de esta página y responsive -->
+    <link rel="stylesheet" href="clientes.css">
+    <link rel="stylesheet" href="clientes-responsive.css">
+</head>
+
+<body>
+
+    <!-- Contenedor del Header -->
+    <div id="header-placeholder"></div>
+
+    <section class="page-wrapper">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+
+        <div class="container">
+            <!-- Encabezado de la página -->
+            <div class="section-header fade-in-up">
+                <h2 class="section-title">Nuestros <span>Clientes</span></h2>
+                <p class="section-subtitle">La satisfacción de nuestros clientes es nuestra mejor carta de presentación.
+                    Conoce sus experiencias trabajando con la calidad de Imprenta Arcoiris.</p>
+            </div>
+
+            <!-- Slider Automático de Marcas (Carrusel infinito) -->
+            <div class="trust-section fade-in-up" style="transition-delay: 0.1s;">
+                <h3 class="trust-title">Empresas que confían en nosotros</h3>
+                <div class="logos-slider-container">
+                    <div class="logos-track">
+                        <!-- SET 1 DE LOGOS -->
+                        <!-- Usamos imágenes PNG (sustituye los src por tus logos reales) -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+                            class="client-logo-img" alt="Cliente 1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg"
+                            class="client-logo-img" alt="Cliente 2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg"
+                            class="client-logo-img" alt="Cliente 3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Tata_Consultancy_Services_Logo.svg"
+                            class="client-logo-img" alt="Cliente 4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                            class="client-logo-img" alt="Cliente 5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"
+                            class="client-logo-img" alt="Cliente 6">
+
+                        <!-- SET 2 DE LOGOS (Duplicado exacto para el bucle infinito suave) -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+                            class="client-logo-img" alt="Cliente 1">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg"
+                            class="client-logo-img" alt="Cliente 2">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg"
+                            class="client-logo-img" alt="Cliente 3">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Tata_Consultancy_Services_Logo.svg"
+                            class="client-logo-img" alt="Cliente 4">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                            class="client-logo-img" alt="Cliente 5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"
+                            class="client-logo-img" alt="Cliente 6">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Manual de Testimonios con Flechas -->
+            <div class="testimonials-slider-container fade-in-up" style="transition-delay: 0.2s;">
+
+                <button class="slider-arrow prev-arrow"><i class="fa-solid fa-chevron-left"></i></button>
+
+                <div class="testimonials-wrapper">
+                    <div class="testimonials-track">
+
+                        <!-- Testimonio 1 (Fuente: Google) -->
+                        <div class="testimonial-card">
+                            <!-- Imagen de la fuente de la reseña -->
+                            <div class="review-source">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                    alt="Google Review">
+                            </div>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Excelente calidad en la lona para la fachada de mi consultorio.
+                                Los colores son muy vivos y el material resistente a la intemperie. La instalación fue
+                                impecable. Sin duda los recomiendo ampliamente."</p>
+                            <div class="client-profile">
+                                <div class="client-avatar">
+                                    <img src="https://i.pravatar.cc/150?img=11" alt="Dr. Roberto Valdés">
+                                </div>
+                                <div class="client-info">
+                                    <h5>Dr. Roberto Valdés</h5>
+                                    <p>Clínica Médica BEST</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonio 2 (Fuente: Instagram) -->
+                        <div class="testimonial-card">
+                            <div class="review-source">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                                    alt="Instagram Review">
+                            </div>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Encargué las invitaciones en corte láser para un evento social
+                                y quedaron espectaculares. La atención a los detalles y la presentación en su caja
+                                personalizada le dio un toque muy premium."</p>
+                            <div class="client-profile">
+                                <div class="client-avatar">
+                                    <img src="https://i.pravatar.cc/150?img=5" alt="Mariana Gutiérrez">
+                                </div>
+                                <div class="client-info">
+                                    <h5>Mariana Gutiérrez</h5>
+                                    <p>Organizadora de Eventos</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonio 3 (Fuente: Facebook) -->
+                        <div class="testimonial-card">
+                            <div class="review-source">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
+                                    alt="Facebook Review">
+                            </div>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p class="testimonial-text">"Trabajamos con Arcoiris para rotular nuestra nueva sucursal y
+                                colocar viniles impresos. Fueron rápidos, profesionales y dejaron todo con un acabado
+                                perfecto. El diseño superó nuestras expectativas."</p>
+                            <div class="client-profile">
+                                <div class="client-avatar">
+                                    <img src="https://i.pravatar.cc/150?img=12" alt="Ing. Carlos Martínez">
+                                </div>
+                                <div class="client-info">
+                                    <h5>Ing. Carlos Martínez</h5>
+                                    <p>Sector Comercial</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonio 4 (Fuente: Google) -->
+                        <div class="testimonial-card">
+                            <div class="review-source">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                                    alt="Google Review">
+                            </div>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Me hicieron unas etiquetas holográficas con corte a registro
+                                increíbles para mi marca. Tienen un brillo espectacular, excelente resolución gráfica y
+                                los tiempos de entrega son inmejorables."</p>
+                            <div class="client-profile">
+                                <div class="client-avatar">
+                                    <img src="https://i.pravatar.cc/150?img=20" alt="Valeria Sánchez">
+                                </div>
+                                <div class="client-info">
+                                    <h5>Valeria Sánchez</h5>
+                                    <p>Emprendedora Textil</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="slider-arrow next-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+
+                <!-- Contenedor móvil para flechas -->
+                <div class="mobile-slider-controls"></div>
+
+            </div>
+
+            <!-- CTA Banner Inferior -->
+            <div class="cta-banner fade-in-up" style="margin-top: 100px;">
+                <div class="cta-content"><i class="fa-regular fa-file-lines"></i>
+                    <div>
+                        <h3>¿Tienes un proyecto en mente?</h3>
+                        <p>Cotiza sin compromiso y recibe asesoría.</p>
+                    </div>
+                </div>
+                <a href="contacto.html" class="btn" style="background: var(--gold); color: var(--black-soft);">Cotiza
+                    ahora <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contenedor del Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts unificados -->
+    <script src="components.js"></script>
+    <script src="../search.js"></script>
+
+    <!-- Script de Sliders exclusivo para esta página -->
+    <script src="clientes.js"></script>
+
+</body>
+
+</html>

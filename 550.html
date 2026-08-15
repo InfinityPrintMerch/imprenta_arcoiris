@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Eduardo López Salinas">
+    <title>Imprenta Arcoiris | Página en Construcción</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="secciones.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <!-- ÁREA DE RESULTADOS DE BÚSQUEDA (El css está en style.css) -->
+    <section id="search-results-area"
+        style="display: none; padding: 140px 0 100px; background: #faf8f5; min-height: 70vh;">
+        <div class="container">
+            <div class="results-header"
+                style="margin-bottom: 50px; padding-bottom: 25px; border-bottom: 2px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="margin: 0; font-size: 2.2rem; color: #0f172a; font-weight: 800;">Resultados para: <span
+                        id="searchTermDisplay" style="color: #d4af37; position: relative;"></span></h2>
+                <span id="resultsCount">0 servicios encontrados</span>
+            </div>
+            <div class="service-grid" id="resultsGrid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;"></div>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL EN CONSTRUCCIÓN -->
+    <main id="main-content">
+        <section class="error-section">
+            <div class="container">
+                <div class="error-content fade-in-up">
+
+                    <h1 class="error-title">Página en <span>Construcción</span></h1>
+                    <p class="error-desc">Estamos trabajando arduamente en esta sección. Muy pronto estará lista con
+                        nueva información y servicios para ti.</p>
+                    <div class="error-buttons">
+                        <a href="index.html" class="btn btn-primary">Volver al inicio <i
+                                class="fa-solid fa-house"></i></a>
+                        <!-- Se actualizó el mensaje de WhatsApp para que tenga sentido con la página en construcción -->
+                        <a href="https://wa.me/522411250287?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20la%20secci%C3%B3n%20que%20est%C3%A1%20en%20construcci%C3%B3n"
+                            target="_blank" class="btn btn-whatsapp-alt">
+                            <i class="fa-brands fa-whatsapp"></i> Preguntar por este servicio
+                        </a>
+                    </div>
+                    <div class="error-features">
+                        <div class="h-feature">
+                            <div class="h-icon"><i class="fa-solid fa-compass"></i></div>
+                            <div class="h-text">
+                                <h5>Navegación</h5>
+                                <p>Usa el menú superior</p>
+                            </div>
+                        </div>
+                        <div class="h-feature">
+                            <div class="h-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <div class="h-text">
+                                <h5 class="custom-margin-fix">Buscador</h5>
+                                <p>Encuentra servicios</p>
+                            </div>
+                        </div>
+                        <div class="h-feature">
+                            <div class="h-icon"><i class="fa-solid fa-rainbow"></i></div>
+                            <div class="h-text">
+                                <h5>Asistencia RainB</h5>
+                                <p>Atención personalizada</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="error-image fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="error-code-card">
+                        <!-- Usamos un icono de engranaje animado en lugar del 404 para representar construcción -->
+                        <span class="big-404" style="font-size: 5rem; display: inline-block; margin-bottom: 10px;">
+                            <i class="fa-solid fa-gear fa-spin"></i>
+                        </span>
+                        <i class="fa-solid fa-screwdriver-wrench floating-icon"></i>
+                        <p>¡Estamos ajustando las máquinas y preparando las tintas para esta nueva sección!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE ACCESO RÁPIDO A SERVICIOS -->
+        <section class="error-quick-services">
+            <div class="container">
+                <div class="text-center fade-in-up">
+                    <span class="subtitle">Mientras tanto</span>
+                    <h2 class="title">Explora nuestros servicios principales</h2>
+                    <p class="desc">Aquí tienes acceso directo a lo más solicitado por nuestros clientes.</p>
+                </div>
+                <div class="service-grid">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon-box bg-blue"><i class="fa-solid fa-book-open"></i></div>
+                        <h3>Impresión Digital</h3>
+                        <p>Volantes, folletos, tarjetas, catálogos y papelería express.</p>
+                        <a href="servicios/impresion-digital.html" class="link-more">Saber más <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card fade-in-up" style="transition-delay: 0.1s;">
+                        <div class="service-icon-box bg-gold"><i class="fa-solid fa-layer-group"></i></div>
+                        <h3>Gran Formato</h3>
+                        <p>Lonas, viniles, banners y señalética en calidad publicitaria.</p>
+                        <a href="servicios/gran-formato.html" class="link-more">Saber más <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="components.js"></script>
+    <script src="search.js"></script>
+    <script src="assistant.js"></script>
+</body>
+
+</html>

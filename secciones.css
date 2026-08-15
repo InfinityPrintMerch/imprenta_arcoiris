@@ -553,3 +553,251 @@
         padding-right: 0 !important;
     }
 }
+
+/* ==========================================================================
+   DISEÑO RESPONSIVE PARA CLIENTES.HTML (clientes-responsive.css)
+   ========================================================================== */
+
+/* TABLETS GRANDES (Menos de 1100px) */
+@media (max-width: 1100px) {
+    .testimonial-card {
+        /* Pasa a 2 tarjetas por fila (50% menos la mitad del gap) */
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+
+/* TABLETS Y MÓVILES HORIZONTALES (Menos de 768px) */
+@media (max-width: 768px) {
+    .testimonial-card {
+        /* Pasa a 1 tarjeta por fila */
+        flex: 0 0 100%;
+    }
+
+    /* Reducir difuminado lateral en los logos */
+    .logos-slider-container::before,
+    .logos-slider-container::after {
+        width: 50px;
+    }
+
+    .client-logo-img {
+        height: 40px;
+    }
+
+    .logos-track {
+        gap: 50px;
+    }
+
+    /* Ajustes del contenedor del slider manual */
+    .testimonials-slider-container {
+        padding: 10px 0;
+        /* Quitamos el padding lateral para aprovechar el ancho */
+    }
+
+    /* Mover flechas debajo de las tarjetas en móviles */
+    .slider-arrow {
+        position: static;
+        transform: none;
+        display: inline-flex;
+    }
+
+    .slider-arrow:hover {
+        transform: scale(1.1);
+    }
+
+    /* Ocultar flechas absolutas, inyectarlas en el contenedor móvil mediante JS */
+    .testimonials-slider-container>.slider-arrow {
+        display: none;
+    }
+
+    .mobile-slider-controls {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .mobile-slider-controls .slider-arrow {
+        display: flex;
+    }
+}
+
+/* CELULARES PEQUEÑOS (Menos de 480px) */
+@media (max-width: 480px) {
+    .testimonial-card {
+        padding: 25px 20px;
+    }
+
+    .review-source {
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+
+    .testimonial-text {
+        font-size: 0.95rem;
+    }
+
+    .client-avatar {
+        width: 45px;
+        height: 45px;
+    }
+
+    .client-info h5 {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================================================
+   CSS RESPONSIVE (TABLETS Y MÓVILES)
+   ========================================================================== */
+
+/* --- TABLETS (hasta 1024px) --- */
+@media (max-width: 1024px) {
+    .product-layout {
+        grid-template-columns: 1fr;
+        border-radius: 24px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .product-details-col {
+        border-top: 1px dashed var(--border-color);
+        padding-top: 30px;
+    }
+
+    .product-extra-info {
+        padding: 30px;
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        margin-top: 20px;
+    }
+
+    .extra-grid {
+        grid-template-columns: 1fr;
+        border-top: none;
+        padding-top: 0;
+    }
+}
+
+/* --- MÓVILES (hasta 768px) --- */
+@media (max-width: 768px) {
+
+    /* Categorías: 2 por fila, apiladas */
+    .category-grid-compact {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .cat-card-compact {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 10px;
+        gap: 8px;
+    }
+
+    .cat-card-img {
+        width: 65px;
+    }
+
+    .cat-card-info span {
+        display: none;
+        /* Limpieza visual */
+    }
+
+    /* Modelos (Productos) y Similares: 2 por fila */
+    .models-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .model-card-body {
+        padding: 12px;
+        position: relative;
+    }
+
+    /* Ocultamos descripción larga y superponemos tag */
+    .model-card p {
+        display: none;
+    }
+
+    .model-tag {
+        position: absolute;
+        top: -150px;
+        left: 10px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(4px);
+        font-size: 0.7rem;
+        margin: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+    }
+
+    .model-card h4 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        line-height: 1.3;
+        height: 2.6em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Botón "Ver detalles" acortado a "Ver modelo" en CSS puro */
+    .model-btn-ver {
+        font-size: 0;
+        justify-content: space-between;
+        margin-top: auto;
+    }
+
+    .model-btn-ver::before {
+        content: 'Ver modelo';
+        font-size: 0.85rem;
+    }
+
+    .model-btn-ver i {
+        font-size: 0.85rem;
+    }
+}
+
+/* --- MÓVILES PEQUEÑOS (hasta 600px) --- */
+@media (max-width: 600px) {
+    .product-layout {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .product-extra-info {
+        padding: 20px 15px;
+    }
+
+    .product-main-image {
+        padding: 10px;
+        background: transparent;
+    }
+
+    .product-thumbnails.horizontal {
+        justify-content: flex-start;
+    }
+
+    .prod-thumb {
+        width: 65px;
+    }
+
+    .prod-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .btn-whatsapp-large {
+        padding: 14px;
+        font-size: 1rem;
+    }
+
+    .delivery-card i {
+        font-size: 2rem;
+    }
+
+    .delivery-text h5 {
+        font-size: 1rem;
+    }
+}

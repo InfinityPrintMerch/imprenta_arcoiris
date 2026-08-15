@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Brayan Eduardo López Salinas">
+    <title>Imprenta Arcoiris | Catálogo de Invitaciones</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Estilos generales -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../secciones.css">
+
+    <!-- CSS INTEGRADO -->
+    <style>
+        /* ==================== BLOQUEO DE SELECCIÓN Y ARRASTRE ==================== */
+        body,
+        main,
+        div,
+        p,
+        span,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        ul,
+        li {
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* IE10+/Edge */
+            user-select: none;
+            /* Standard */
+        }
+
+        /* Habilitar selección SOLO en inputs y elementos donde es estrictamente necesario escribir */
+        input,
+        textarea {
+            -webkit-user-select: auto;
+            -moz-user-select: auto;
+            -ms-user-select: auto;
+            user-select: auto;
+        }
+
+        /* Bloquear arrastre de imágenes para que no se las lleven tan fácil */
+        img {
+            -webkit-user-drag: none;
+            pointer-events: none;
+            /* Impide clics directos sobre la imagen */
+        }
+
+        /* Restaurar pointer-events en imágenes que funcionan como botones (ej. thumbs y lightbox) */
+        .view-thumb img,
+        .view-main-img-wrapper img,
+        .catlg-card-img,
+        .lightbox-overlay img {
+            pointer-events: auto;
+        }
+
+        /* ==================== ESTILOS DEL CATÁLOGO ==================== */
+        .catalog-wrapper {
+            padding: 20px 0 100px;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .catalog-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .catlg-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .catlg-search-box {
+            position: relative;
+            width: 100%;
+        }
+
+        .catlg-search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-mid);
+            font-size: 1.1rem;
+        }
+
+        .catlg-search-box input {
+            width: 100%;
+            padding: 14px 15px 14px 45px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background: var(--white);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            color: var(--blue-dark);
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .catlg-search-box input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(197, 160, 88, 0.1);
+        }
+
+        .catlg-widget {
+            background: transparent;
+        }
+
+        .catlg-widget-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .catlg-widget-header h3 {
+            font-size: 1.1rem;
+            color: var(--blue-dark);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .catlg-filter-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .catlg-filter-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--gray-mid);
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            padding: 5px 0;
+        }
+
+        .catlg-filter-item:hover,
+        .catlg-filter-item.active {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .btn-catlg-clear {
+            width: 100%;
+            padding: 12px;
+            background: #e2e8f0;
+            color: var(--blue-dark);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-catlg-clear:hover {
+            background: #cbd5e1;
+        }
+
+        .catlg-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .catlg-title {
+            font-size: 2rem;
+            color: var(--black-soft);
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .catlg-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        /* CARD MODIFICADA (Radio reducido, imagen separada) */
+        .catlg-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .catlg-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            border-color: rgba(197, 160, 88, 0.5);
+        }
+
+        .catlg-card-header {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            padding: 15px 15px 0 15px;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        .catlg-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.5s ease;
+        }
+
+        .catlg-card:hover .catlg-card-img {
+            transform: scale(1.03);
+        }
+
+        .catlg-card-body {
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        /* Título más pequeño */
+        .catlg-card-title {
+            font-size: 1.1rem;
+            color: var(--blue-dark);
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            line-height: 1.3;
+        }
+
+        /* Tags (Solo uno) */
+        .catlg-tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .catlg-tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .catlg-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--gray-mid);
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        /* ==================== ESTILOS DE LA VISTA DETALLE ==================== */
+        .view-card {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+        }
+
+        .view-gallery-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .view-main-img-wrapper {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            background: var(--cream);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: zoom-in;
+            position: relative;
+        }
+
+        .view-main-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: filter 0.3s;
+        }
+
+        .view-main-img-wrapper:hover img {
+            filter: brightness(0.95);
+        }
+
+        .zoom-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(29, 45, 68, 0.7);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .view-main-img-wrapper:hover .zoom-icon {
+            opacity: 1;
+        }
+
+        .view-thumbs {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .view-thumb {
+            width: 60px;
+            height: 60px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 4px;
+            cursor: pointer;
+            transition: border-color 0.2s;
+            background: var(--white);
+        }
+
+        .view-thumb.active,
+        .view-thumb:hover {
+            border-color: var(--blue-dark);
+            border-width: 2px;
+            padding: 3px;
+        }
+
+        .view-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .view-info-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .view-sku {
+            color: var(--gray-mid);
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .view-title {
+            font-size: 1.8rem;
+            color: var(--black-soft);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .view-desc-text {
+            color: var(--gray-mid);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .alert-no-shipping {
+            background: #fff0f0;
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            border-radius: 4px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .alert-no-shipping i {
+            color: #ef4444;
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        .alert-no-shipping p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #7f1d1d;
+            line-height: 1.4;
+        }
+
+        .view-list-title {
+            font-size: 1.1rem;
+            color: var(--black-soft);
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        .view-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+        }
+
+        .view-list li {
+            font-size: 0.9rem;
+            color: var(--gray-mid);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.5;
+        }
+
+        .view-list li i {
+            margin-top: 4px;
+            font-size: 0.8rem;
+        }
+
+        .btn-view-buy {
+            background: #3483fa;
+            color: white;
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            margin-top: auto;
+        }
+
+        .btn-view-buy:hover {
+            background: #2968c8;
+            color: white;
+        }
+
+        /* Contenedor extra abajo */
+        .view-extra-card {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .view-specs-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .spec-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .spec-item i {
+            font-size: 1.5rem;
+            color: var(--blue-dark);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .spec-item .spec-label {
+            display: block;
+            color: var(--gray-mid);
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .spec-item .spec-val {
+            display: block;
+            color: var(--black-soft);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Contenedor de Extras */
+        .extras-container {
+            margin-top: 25px;
+            background: #fafafa;
+            border: 1px dashed var(--gold);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .extras-container p {
+            font-size: 0.85rem;
+            color: var(--gray-mid);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        /* Similares */
+        .similar-title {
+            font-size: 1.5rem;
+            color: var(--blue-dark);
+            font-weight: 700;
+            margin: 40px 0 20px;
+            text-align: center;
+        }
+
+        /* Lightbox (Pantalla Completa) */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17, 17, 16, 0.95);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox-overlay.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            z-index: 10000;
+        }
+
+        .lightbox-close:hover {
+            color: var(--gold);
+        }
+
+        .lightbox-overlay img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            object-fit: contain;
+        }
+
+        /* Responsivo */
+        @media (max-width: 1200px) {
+            .catlg-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .catalog-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .catlg-sidebar {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .catlg-search-box,
+            .catlg-widget,
+            .btn-catlg-clear {
+                flex: 1 1 300px;
+            }
+
+            .view-card {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .view-specs-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .catlg-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="catalog-wrapper">
+        <div class="container">
+
+            <!-- ==========================================
+                 PANTALLA 1: CATÁLOGO PRINCIPAL
+                 ========================================== -->
+            <div id="pantalla-catalogo" class="catalog-layout">
+                <aside class="catlg-sidebar">
+                    <div class="catlg-search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="catlg-search-input" placeholder="Buscar modelo o SKU...">
+                    </div>
+
+                    <!-- Filtros Dinámicos de Eventos -->
+                    <div class="catlg-widget">
+                        <div class="catlg-widget-header">
+                            <h3>Eventos</h3>
+                        </div>
+                        <ul class="catlg-filter-list" id="filter-eventos-list">
+                            <!-- JS inyecta lista de eventos -->
+                        </ul>
+                    </div>
+
+                    <!-- Filtros Dinámicos de Formatos -->
+                    <div class="catlg-widget">
+                        <div class="catlg-widget-header">
+                            <h3>Formato</h3>
+                        </div>
+                        <ul class="catlg-filter-list" id="filter-formatos-list">
+                            <!-- JS inyecta lista de formatos -->
+                        </ul>
+                    </div>
+
+                    <button class="btn-catlg-clear" id="btn-catlg-clear">Limpiar filtros</button>
+                </aside>
+
+                <section class="catlg-main-content">
+                    <div class="catlg-topbar">
+                        <h1 class="catlg-title" id="catlg-results-count">Cargando modelos...</h1>
+                    </div>
+                    <div class="catlg-grid" id="catalog-grid-container">
+                        <!-- JS Inyecta las tarjetas aquí -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- ==========================================
+                 PANTALLA 2: VISTA DETALLE DEL PRODUCTO
+                 ========================================== -->
+            <div id="pantalla-detalle" style="display: none;">
+                <button id="btn-volver-catalogo"
+                    style="background:none; border:none; color:var(--blue-dark); font-weight:600; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:8px; margin-bottom:20px; font-family:'Poppins', sans-serif;">
+                    <i class="fa-solid fa-arrow-left"></i> Volver al catálogo
+                </button>
+
+                <div class="view-card" id="view-container-top">
+                    <!-- JS Inyecta imagen e info superior aquí -->
+                </div>
+
+                <div class="view-extra-card" id="view-container-bottom">
+                    <!-- JS Inyecta specs e inclusiones aquí -->
+                </div>
+
+                <!-- SIMILARES -->
+                <h2 class="similar-title" id="similar-title" style="display:none;">Modelos Similares</h2>
+                <div class="catlg-grid" id="similar-grid-container"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- LIGHTBOX PARA IMAGEN COMPLETA -->
+    <div id="lightbox-modal" class="lightbox-overlay">
+        <button id="lightbox-close" class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+        <img id="lightbox-img" src="" alt="Vista Completa">
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts Base -->
+    <script src="../components.js"></script>
+    <script src="../search.js"></script>
+    <script src="../assistant.js"></script>
+
+    <!-- LOGICA INTEGRADA -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Variables de Datos y DOM
+            let invitacionesData = [];
+            let currentData = [];
+
+            const pantallaCatalogo = document.getElementById('pantalla-catalogo');
+            const pantallaDetalle = document.getElementById('pantalla-detalle');
+            const gridContainer = document.getElementById('catalog-grid-container');
+            const viewTop = document.getElementById('view-container-top');
+            const viewBottom = document.getElementById('view-container-bottom');
+            const similarGrid = document.getElementById('similar-grid-container');
+            const similarTitle = document.getElementById('similar-title');
+
+            const listEventos = document.getElementById('filter-eventos-list');
+            const listFormatos = document.getElementById('filter-formatos-list');
+            const searchInput = document.getElementById('catlg-search-input');
+            const btnClear = document.getElementById('btn-catlg-clear');
+            const countDisplay = document.getElementById('catlg-results-count');
+            const btnVolver = document.getElementById('btn-volver-catalogo');
+
+            const lightbox = document.getElementById('lightbox-modal');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.getElementById('lightbox-close');
+
+            // Iconos base para eventos dinámicos
+            const iconMap = {
+                "Bodas": "fa-envelope",
+                "XV Años": "fa-crown",
+                "Bautizos": "fa-baby",
+                "Comunión": "fa-cross",
+                "Cumpleaños": "fa-cake-candles"
+            };
+
+            // 1. CARGAR DATOS JSON
+            async function loadData() {
+                try {
+                    const response = await fetch('../json/catalogo/invitaciones.json');
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    invitacionesData = await response.json();
+                    currentData = [...invitacionesData];
+
+                    buildFilters();
+
+                    // Manejo de inicio directo por URL
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const initialId = urlParams.get('id');
+                    if (initialId) {
+                        history.replaceState({ view: 'detail', id: initialId }, '', '?id=' + initialId);
+                        showDetailView(initialId);
+                    } else {
+                        history.replaceState({ view: 'catalog' }, '', window.location.pathname);
+                        renderCatalog(currentData);
+                    }
+                } catch (error) {
+                    console.error("Error al cargar invitaciones.json:", error);
+                    countDisplay.textContent = "Error al cargar el catálogo";
+                }
+            }
+
+            // 2. CONSTRUIR FILTROS DINÁMICAMENTE
+            function buildFilters() {
+                const eventosSet = new Set();
+                const formatosSet = new Set();
+
+                invitacionesData.forEach(item => {
+                    if (item.evento) eventosSet.add(item.evento);
+                    if (item.formato) formatosSet.add(item.formato);
+                });
+
+                listEventos.innerHTML = Array.from(eventosSet).map(ev => {
+                    let icon = iconMap[ev] || 'fa-star';
+                    return `<li class="catlg-filter-item" data-filter="${ev}"><span><i class="fa-solid ${icon}"></i> ${ev}</span></li>`;
+                }).join('');
+
+                listFormatos.innerHTML = Array.from(formatosSet).map(fmt => {
+                    return `<li class="catlg-filter-item" data-filter="${fmt}"><span>${fmt}</span></li>`;
+                }).join('');
+
+                attachFilterEvents();
+            }
+
+            // 3. EVENTOS DE LOS FILTROS
+            function attachFilterEvents() {
+                const allFilters = document.querySelectorAll('.catlg-filter-item');
+                allFilters.forEach(filter => {
+                    filter.addEventListener('click', () => {
+                        const categoryNode = filter.closest('.catlg-widget').querySelector('h3');
+                        const category = categoryNode.textContent.toLowerCase();
+
+                        const siblings = filter.parentElement.querySelectorAll('.catlg-filter-item');
+                        siblings.forEach(s => s.classList.remove('active'));
+                        filter.classList.add('active');
+
+                        const filterValue = filter.getAttribute('data-filter');
+
+                        if (category === 'eventos') {
+                            currentData = invitacionesData.filter(item => item.evento === filterValue);
+                        } else if (category === 'formato') {
+                            currentData = invitacionesData.filter(item => item.formato === filterValue);
+                        }
+
+                        renderCatalog(currentData);
+
+                        if (pantallaDetalle.style.display === 'block') {
+                            btnVolver.click();
+                        }
+                    });
+                });
+            }
+
+            // 4. CREAR Y RENDERIZAR TARJETAS
+            function createCardHTML(item) {
+                return `
+                    <div class="catlg-card" onclick="openDetail('${item.id}')">
+                        <div class="catlg-card-header">
+                            <img src="${item.images[0]}" alt="${item.title}" class="catlg-card-img">
+                        </div>
+                        <div class="catlg-card-body">
+                            <div class="catlg-tags">
+                                <span class="catlg-tag">${item.formato}</span>
+                            </div>
+                            <h3 class="catlg-card-title">${item.title}</h3>
+                            <div class="catlg-meta-row">
+                                <span>SKU: ${item.sku}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            function renderCatalog(data) {
+                gridContainer.innerHTML = '';
+                countDisplay.textContent = `Mostrando ${data.length} modelos`;
+
+                if (data.length === 0) {
+                    gridContainer.innerHTML = `<p style="grid-column: 1/-1; text-align:center; color: var(--gray-mid); padding: 40px;">No se encontraron modelos con esos criterios.</p>`;
+                    return;
+                }
+
+                data.forEach(item => {
+                    gridContainer.innerHTML += createCardHTML(item);
+                });
+            }
+
+            // 5. RENDERIZAR VISTA DETALLE
+            function showDetailView(id) {
+                const product = invitacionesData.find(p => p.id === id);
+                if (!product) return;
+
+                const featuresHtml = product.features.map(f => `<li><i class="fa-solid fa-check" style="color:var(--gold);"></i> ${f}</li>`).join('');
+                const thumbsHtml = product.images.map((img, index) => `
+                    <div class="view-thumb ${index === 0 ? 'active' : ''}" onclick="changeMainImage('${img}', this)">
+                        <img src="${img}" alt="Miniatura ${index + 1}">
+                    </div>
+                `).join('');
+
+                // Crear URL de cotización dinámico para enviarlo por WhatsApp
+                const urlInvitacion = `https://imprenta-arcoiris.onrender.com/catalogos/invitaciones.html?id=${product.id}`;
+                const mensajeWa = `Hola, me interesa cotizar el modelo ${product.sku} - ${product.title}.\nLo vi en este enlace: ${urlInvitacion}`;
+                const waLink = `https://wa.me/522411250287?text=${encodeURIComponent(mensajeWa)}`;
+
+                viewTop.innerHTML = `
+                    <div class="view-gallery-col">
+                        <div class="view-main-img-wrapper" onclick="openLightbox()">
+                            <img id="main-product-img" src="${product.images[0]}" alt="${product.title}">
+                            <div class="zoom-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        </div>
+                        <div class="view-thumbs">
+                            ${thumbsHtml}
+                        </div>
+                    </div>
+
+                    <div class="view-info-col">
+                        <span class="view-sku">SKU: ${product.sku} | ${product.evento} | ${product.formato}</span>
+                        <h1 class="view-title">${product.title}</h1>
+                        <p class="view-desc-text">${product.desc}</p>
+                        
+                        <div class="alert-no-shipping">
+                            <i class="fa-solid fa-truck-fast" style="text-decoration: line-through;"></i>
+                            <p><strong>Aviso Importante:</strong> Recuerda que <b>no hacemos envíos físicos</b>. Toda entrega se realiza directamente en nuestro estudio creativo o en formato digital según corresponda.</p>
+                        </div>
+
+                        <h3 class="view-list-title">Características Principales</h3>
+                        <ul class="view-list">
+                            ${featuresHtml}
+                        </ul>
+
+                        <a href="${waLink}" target="_blank" class="btn-view-buy">
+                            Cotizar este diseño <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i>
+                        </a>
+                    </div>
+                `;
+
+                const includesHtml = product.includes.map(i => `<li><i class="fa-solid fa-box-open" style="color:var(--gold);"></i> ${i}</li>`).join('');
+
+                // Generar Extras si existen
+                let extrasHtml = '';
+                if (product.extras && product.extras.length > 0) {
+                    const extList = product.extras.map(e => `<li><i class="fa-solid fa-check" style="color:var(--gold);"></i> ${e}</li>`).join('');
+                    extrasHtml = `
+                        <div class="extras-container">
+                            <h3 class="view-list-title"><i class="fa-solid fa-plus" style="color:var(--gold);"></i> Extras Disponibles</h3>
+                            <p>Estos son detalles adicionales que puedes agregar a tu pedido. Toda gestión y detalle de diseño se afina personalmente por WhatsApp o en nuestro <b>estudio creativo</b>.</p>
+                            <ul class="view-list" style="margin-bottom:0;">
+                                ${extList}
+                            </ul>
+                        </div>
+                    `;
+                }
+
+                viewBottom.innerHTML = `
+                    <div class="view-specs-box">
+                        <div class="spec-item">
+                            <i class="fa-solid fa-cubes"></i>
+                            <span class="spec-label">Pedido Mínimo</span>
+                            <span class="spec-val">${product.minPieces}</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fa-solid fa-clock"></i>
+                            <span class="spec-label">Tiempo Estimado</span>
+                            <span class="spec-val" style="color: #16a34a;">${product.delivery}</span>
+                        </div>
+                    </div>
+                    <h3 class="view-list-title">¿Qué incluye tu paquete?</h3>
+                    <ul class="view-list" style="margin-bottom:0;">
+                        ${includesHtml}
+                    </ul>
+                    ${extrasHtml}
+                `;
+
+                // Renderizar similares
+                const similares = invitacionesData.filter(p => p.id !== id && (p.formato === product.formato || p.evento === product.evento)).slice(0, 3);
+
+                if (similares.length > 0) {
+                    similarTitle.style.display = 'block';
+                    similarGrid.innerHTML = similares.map(s => createCardHTML(s)).join('');
+                } else {
+                    similarTitle.style.display = 'none';
+                    similarGrid.innerHTML = '';
+                }
+
+                pantallaCatalogo.style.display = 'none';
+                pantallaDetalle.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                document.title = `${product.title} | Imprenta Arcoiris`;
+            }
+
+            function showCatalogView() {
+                pantallaDetalle.style.display = 'none';
+                pantallaCatalogo.style.display = 'grid';
+                document.title = "Imprenta Arcoiris | Catálogo de Invitaciones";
+            }
+
+            // 6. HISTORY API (Navegación sin recargar, botón Atrás del Mouse)
+            window.openDetail = function (id) {
+                history.pushState({ view: 'detail', id: id }, '', '?id=' + id);
+                showDetailView(id);
+            };
+
+            window.addEventListener('popstate', (e) => {
+                if (e.state && e.state.view === 'detail') {
+                    showDetailView(e.state.id);
+                } else {
+                    showCatalogView();
+                }
+            });
+
+            btnVolver.addEventListener('click', () => {
+                if (history.state && history.state.view === 'detail') {
+                    history.back(); // Hace lo mismo que el botón atrás del navegador
+                } else {
+                    showCatalogView();
+                    history.pushState({ view: 'catalog' }, '', window.location.pathname);
+                }
+            });
+
+            // 7. GALERÍA Y LIGHTBOX
+            window.changeMainImage = function (imgSrc, element) {
+                document.getElementById('main-product-img').src = imgSrc;
+                document.querySelectorAll('.view-thumb').forEach(t => t.classList.remove('active'));
+                element.classList.add('active');
+            };
+
+            window.openLightbox = function () {
+                lightboxImg.src = document.getElementById('main-product-img').src;
+                lightbox.classList.add('visible');
+            };
+
+            lightboxClose.addEventListener('click', () => lightbox.classList.remove('visible'));
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('visible'); });
+
+            // 8. BUSCADOR
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                currentData = invitacionesData.filter(item =>
+                    item.title.toLowerCase().includes(term) ||
+                    item.sku.toLowerCase().includes(term)
+                );
+                renderCatalog(currentData);
+            });
+
+            // 9. LIMPIAR FILTROS
+            btnClear.addEventListener('click', () => {
+                document.querySelectorAll('.catlg-filter-item').forEach(s => s.classList.remove('active'));
+                searchInput.value = '';
+                currentData = [...invitacionesData];
+                renderCatalog(currentData);
+            });
+
+            // EJECUTAR CARGA
+            loadData();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,8 +1,8 @@
 /* components.js */
 
 document.addEventListener('DOMContentLoaded', async () => {
-    // 1. Detectar si estamos en una subcarpeta (ej. la carpeta "servicios")
-    const isSubfolder = window.location.pathname.includes('/servicios/');
+    // 1. Detectar si estamos en una subcarpeta (AQUÍ ESTÁ EL ARREGLO)
+    const isSubfolder = window.location.pathname.includes('/servicios/') || window.location.pathname.includes('/catalogos/');
     const basePath = isSubfolder ? '../' : './';
 
     try {
@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             headerHtml = headerHtml.replace(/href="index\.html/g, 'href="../index.html');
             headerHtml = headerHtml.replace(/href="galeria\.html/g, 'href="../galeria.html');
             headerHtml = headerHtml.replace(/href="contacto\.html/g, 'href="../contacto.html');
+            // NUEVO: Agregamos las reglas para las páginas de construcción, error y servicios generales
+            headerHtml = headerHtml.replace(/href="servicios\.html/g, 'href="../servicios.html');
+            headerHtml = headerHtml.replace(/href="550\.html/g, 'href="../550.html');
+            headerHtml = headerHtml.replace(/href="404\.html/g, 'href="../404.html');
+
             headerHtml = headerHtml.replace(/src="logotipe\.png"/g, 'src="../logotipe.png"');
         }
 
@@ -80,6 +85,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         const footerRes = await fetch(basePath + 'footer.html');
         if (footerRes.ok) {
             let footerHtml = await footerRes.text();
+
+            // NUEVO: Corregir rutas también en el footer si estamos en subcarpeta
+            if (isSubfolder) {
+                footerHtml = footerHtml.replace(/href="index\.html/g, 'href="../index.html');
+                footerHtml = footerHtml.replace(/href="galeria\.html/g, 'href="../galeria.html');
+                footerHtml = footerHtml.replace(/href="contacto\.html/g, 'href="../contacto.html');
+                footerHtml = footerHtml.replace(/href="servicios\.html/g, 'href="../servicios.html');
+                footerHtml = footerHtml.replace(/href="550\.html/g, 'href="../550.html');
+                footerHtml = footerHtml.replace(/href="404\.html/g, 'href="../404.html');
+            }
+
             const footerPlaceholder = document.getElementById('footer-placeholder');
             if (footerPlaceholder) {
                 footerPlaceholder.innerHTML = footerHtml;
@@ -142,6 +158,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             } else {
                 if (currentPath.includes('galeria') && linkHref.includes('galeria')) link.classList.add('active');
                 if (currentPath.includes('contacto') && linkHref.includes('contacto')) link.classList.add('active');
+                if (currentPath.includes('servicios') && linkHref.includes('servicios')) link.classList.add('active');
+                if (currentPath.includes('clientes') && linkHref.includes('clientes')) link.classList.add('active');
+                if (currentPath.includes('catalogos') && linkHref.includes('catalogos')) link.classList.add('active');
             }
         });
 
@@ -163,7 +182,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // --- 7. AVISO DE CARGA TERMINADA ---
         document.dispatchEvent(new Event('headerCargado'));
-        document.dispatchEvent(new Event('asistenteCargado')); // <--- Avisamos al assistant.js que ya puede arrancar
+        document.dispatchEvent(new Event('asistenteCargado'));
 
     } catch (error) {
         console.error("Error cargando los componentes. Recuerda usar Live Server:", error);

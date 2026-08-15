@@ -1,0 +1,120 @@
+[
+    {
+        "id": "inv-001",
+        "title": "Boda Minimalista en Opalina",
+        "desc": "Diseño elegante en blanco puro impreso sobre opalina de 225g. Incluye sobre a medida y pase de acceso.",
+        "evento": "Bodas",
+        "formato": "Impresa Tradicional",
+        "sku": "INV-001",
+        "minPieces": "30 piezas",
+        "delivery": "5 a 7 días hábiles",
+        "includes": [
+            "Invitación principal 13x18cm",
+            "Sobre a la medida en color a elegir",
+            "1 Pase de recepción por invitación",
+            "Sello de celofán transparente"
+        ],
+        "extras": [
+            "Sello de lacre personalizado",
+            "Pase extra (Recepción / Agradecimiento)",
+            "Impresión de nombres de invitados en el sobre"
+        ],
+        "features": [
+            "Material: Opalina Premium 225g.",
+            "Impresión láser de alta resolución.",
+            "Diseño 100% personalizable en textos."
+        ],
+        "images": [
+            "https://i.ibb.co/ccdN41Bc/001.png",
+            "https://i.ibb.co/VcyhD5cK/001-01.png"
+        ]
+    },
+    {
+        "id": "inv-002",
+        "title": "Boleto VIP XV Años Neón",
+        "desc": "Invitación digital en PDF interactivo con temática de antro. Incluye botones funcionales para ubicación GPS y confirmación.",
+        "evento": "XV Años",
+        "formato": "Digital PDF / Web",
+        "sku": "INV-002",
+        "minPieces": "1 Archivo Digital",
+        "delivery": "2 a 3 días hábiles",
+        "includes": [
+            "1 Archivo PDF Interactivo",
+            "Botón a Google Maps",
+            "Botón de RSVP a WhatsApp",
+            "Adaptación para celular"
+        ],
+        "extras": [
+            "Filtro personalizado para Instagram",
+            "Código QR impreso para mesa de recepción"
+        ],
+        "features": [
+            "Resolución: Optimizada para pantallas móviles.",
+            "Diseño vibrante con colores neón simulados.",
+            "No caduca, se puede enviar a contactos ilimitados."
+        ],
+        "images": [
+            "https://i.ibb.co/q3Ty1gTz/002.png",
+            "https://i.ibb.co/99y1Tcxt/002-01.png",
+            "https://i.ibb.co/Kp1tHhx9/002-02.png"
+        ]
+    },
+    {
+        "id": "inv-003",
+        "title": "Acrílico Transparente Luxury",
+        "desc": "Placa de acrílico cristalino de 3mm con impresión UV blanca o grabado láser. Súper exclusiva y premium para eventos de gala.",
+        "evento": "Bodas",
+        "formato": "Corte Láser",
+        "sku": "INV-003",
+        "minPieces": "50 piezas",
+        "delivery": "15 a 20 días hábiles",
+        "includes": [
+            "Placa de acrílico de 3mm cortada a láser",
+            "Sobre de terciopelo o cartulina gruesa",
+            "Sello de lacre personalizado",
+            "Pase impreso en albanene"
+        ],
+        "extras": [
+            "Grabado de iniciales en el sobre",
+            "Tinta metálica adicional en los pases",
+            "Caja protectora individual"
+        ],
+        "features": [
+            "Grosor: Acrílico 3mm premium libre de rayones.",
+            "Técnica: Grabado profundo o cama blanca UV.",
+            "Altamente resistente y elegante al tacto."
+        ],
+        "images": [
+            "https://images.unsplash.com/photo-1601058268499-e52658b8ebf8?w=800&q=80",
+            "https://images.unsplash.com/photo-1502444330042-d1a1ddf9bb5b?w=800&q=80"
+        ]
+    },
+    {
+        "id": "inv-004",
+        "title": "Bautizo Osito Volador",
+        "desc": "Diseño tierno en tonos pastel impreso en papel texturizado, perfecto para bautizos y baby showers.",
+        "evento": "Bautizos",
+        "formato": "Impresa Tradicional",
+        "sku": "INV-004",
+        "minPieces": "20 piezas",
+        "delivery": "5 días hábiles",
+        "includes": [
+            "Invitación 10x15cm",
+            "Sobre bolsa color pastel",
+            "Sticker redondo cierra sobres"
+        ],
+        "extras": [
+            "Oración impresa en tarjeta anexa",
+            "Etiqueta con listón para recuerdos"
+        ],
+        "features": [
+            "Papel: Hilado texturizado 250g.",
+            "Colores suaves de alta fidelidad.",
+            "Diseño de personaje original."
+        ],
+        "images": [
+            "https://images.unsplash.com/photo-1519689680058-324335c77eba?w=800&q=80",
+            "https://images.unsplash.com/photo-1520697711202-79b8f2a1b9d4?w=800&q=80"
+        ]
+    }
+]
